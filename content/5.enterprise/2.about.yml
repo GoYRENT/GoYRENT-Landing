@@ -1,0 +1,49 @@
+title: About
+navigation.title: 'About'
+navigation.icon: i-ph-lifebuoy-duotone
+description: Get professional support by Vue and Nuxt experts to achieve your objectives and overcome any challenge.
+            We provide expertise and guidance to companies using Vue and Nuxt, including assistance with project architecture, performance optimization, best practices, and troubleshooting.
+hero:
+  title: ...para ayudar a otras empresas de alquiler a crecer
+  description: En Booqable, nos comprometemos a ayudar a los negocios de alquiler a tener éxito facilitando la gestión del inventario y la aceptación de reservas en línea. Cada día, miles de personas de todo el mundo confían en nuestro software de alquiler para gestionar su negocio.
+              Estamos constantemente recogiendo los comentarios de los clientes y mejorando nuestro producto para satisfacer las necesidades cambiantes de nuestros clientes, los propietarios de negocios de alquiler. Booqable soporta flujos de trabajo ágiles y flexibles. Nuestro producto ayuda a los equipos a organizar su inventario, automatizar las tareas diarias y conseguir más reservas a través de su tienda en línea.
+  align: center
+features:
+  title: Optimiza tu consumo, alquila en lugar de comprar.
+  description: Al alquilar en lugar de comprar, se puede disfrutar de la funcionalidad de un producto por un período específico, evitando la necesidad de poseerlo permanentemente, lo que puede contribuir a la disminución del desperdicio y la huella ambiental.
+  items:
+    - title: El espíritu empresarial local
+      icon: i-heroicons-building-storefront
+      description: Los negocios de alquiler son el parangón del empresariado local. Creemos que los alquileres seguirán siendo siempre locales y orientados a la comunidad.
+    - title: Sostenibilidad
+      icon: i-heroicons-swatch
+      description: Todo lo que compramos tiene un impacto en nuestro planeta. El alquiler es la alternativa sostenible para prolongar la vida útil de un producto y reducir los residuos.
+    - title: Accesibilidad
+      icon: i-heroicons-swatch
+      description: Alquilar debería ser tan sencillo como comprar, tanto en línea como en la tienda, para satisfacer las demandas del consumidor moderno y mejorar la experiencia.
+team:
+  title: Nuestro equipo
+  description: Con sede en el Parque Científico Tecnológico de La Habana, GOYRENT es una empresa que da prioridad a las actividades a distancia, con un equipo que trabaja y vive en diferentes provincias del país.
+  members:
+    - name: 'Yurier Herrera'
+      description: 'Fundador y Director General'
+      img: '/assets/support/zadig-and-voltaire.svg'
+    - name: 'Yurier Herrera'
+      description: 'Fundador y Director General'
+      img: '/assets/support/zadig-and-voltaire.svg'
+    - name: 'Yurier Herrera'
+      description: 'Fundador y Director General'
+      img: '/assets/support/zadig-and-voltaire.svg'
+cta:
+  title: Pruebe GOYRENT gratis 
+  description: Inicie su prueba gratuita de 15 días, sin hacer ninguna transferencia.
+  links:
+    - label: Probar gratis ahora
+      size: xl
+      color: black
+      to: /pricing
+    - label: Ver demostración
+      size: xl
+      trailingIcon: 'i-heroicons-arrow-right-20-solid'
+      color: gray
+      to: /pricing

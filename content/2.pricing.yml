@@ -1,0 +1,109 @@
+title: Precios
+description: Elija el plan adecuado para usted. Empieza gratis, decide después.
+navigation.icon: i-heroicons-credit-card
+hero:
+  title: Un plan para cada necesidad
+  description: Nuestros planes están diseñados para satisfacer los requisitos tanto de principiantes como de jugadores. Obtenga el plan adecuado que más le convenga.
+  align: center
+plans:
+  - title: Básico
+    description: Todo lo esencial para iniciar negocios de alquiler y pequeños equipos.
+    price:
+      month: $2219
+      year: $26 628 
+      discount: $21 302.4
+    align: top
+    button:
+      label: Probar gratis este plan
+      color: white
+    features:
+      - Incluye 2 cuentas de personal
+      - Pedidos ilimitados
+      - 20 productos registrados
+      - Pagos (Sin comisión)
+      - Incluye 1 ubicación ( o Tienda)
+      - 1 Database
+      - 1 SSL Certificate
+      - 1 Support Ticket
+  - title: Avanzado 
+    description: El mejor valor para las empresas de alquiler de tamaño medio y en crecimiento.
+    badge: Más popular
+    price:
+      month: $3945
+      year: $47 340 
+      discount: $37 872
+    scale: true
+    highlight: true
+    align: top
+    button:
+      label: Probar gratis
+      color: black
+    features:
+      - Incluye 5 cuentas de personal
+      - Productos y pedidos ilimitados
+      - Pagos (Sin comisión)
+      - Incluye 2 ubicaciones ( o Tiendas)
+      - 10 Databases
+      - 10 SSL Certificates
+      - 10 Support Tickets
+  - title: Premium
+    description: Funciones avanzadas para grandes empresas y organizaciones de alquiler.
+    price:
+      month: $5549
+      year: $66 588 
+      discount: $53 270.4
+    align: top
+    button:
+      label: Probar gratis este plan
+      color: white
+    features:
+      - Incluye 15 cuentas de personal
+      - Productos y pedidos ilimitados
+      - Pagos (Sin comisión)
+      - Incluye 3 ubicaciones ( o Tiendas)
+      - 100 Databases
+      - 100 SSL Certificates
+      - 100 Support Tickets
+logos:
+  title: Ellos confían en nosotros porque sabemos cómo crecer juntos
+  description: Cada día pequeñas y medianos negocios confían en nosotros. Estas empresas exitosas ya han elegido nuestro servicio, demostrando que nuestra solución es la clave para su éxito.
+  icons:
+    - i-simple-icons-amazonaws
+    - i-simple-icons-heroku
+    - i-simple-icons-netlify
+    - i-simple-icons-vercel
+    - i-simple-icons-cloudflare
+faq:
+  title: Preguntas frecuentes
+  description: Todos los planes incluyen la incorporación gratuita, la asistencia y el acceso al centro de ayuda.
+  items:
+    - label: ¿Cómo funciona la prueba gratuita?
+      content: Después de crear una cuenta, obtendrás 15 días de acceso a todas las funciones para que puedas ver si Goyrent es el software de alquiler adecuado para tu negocio. Antes de que termine tu prueba, te avisaremos para que elijas un plan para seguir usando Goyrent.
+      defaultOpen: true
+    - label: ¿Cuáles son mis opciones de pago?
+      content: Puedes utilizar su cuenta de Transfermovil o ENZONA para pagar cualquier plan.
+    - label: ¿Hay que pagar por la instalación?
+      content: No, no hay gastos de instalación en ninguno de nuestros planes de precios.
+    - label: ¿Hay una comisión por las reservas?
+      content: No, Goyrent no cobra ninguna tasa de transacción ni comisión por las reservas. Si utilizas el proveedor de pago ENZONA para aceptar pagos, consulta con ENZONA para ver las tarifas de procesamiento de pagos.
+    - label: ¿Puedo cambiar de plan?
+      content: Sí, puedes cambiar de plan en cualquier momento. Al actualizar o bajar de categoría, prorratearemos tu suscripción en función del precio de tu nuevo plan.
+    - label: ¿Qué duración tienen los contratos?
+      content: Los planes de Goyrent se pagan mensual o anualmente, dependiendo de la suscripción que elijas. Ofrecemos un descuento (cercano al 20 %) en los planes anuales cuando se paga por adelantado.
+    - label: ¿Puedo cancelar mi suscripción en cualquier momento?
+      content: Si alguna vez decides que Goyrent no es el software de alquiler adecuado para ti, puedes cancelar tu suscripción o poner tu cuenta en espera. Tu suscripción permanecerá activa hasta el final del período de facturación por el que ya has pagado. No ofrecemos reembolsos.
+    - label: ¿Qué son las cuentas de personal?
+      content: Puedes añadir cuentas de personal a Goyrent para que los miembros de tu equipo se conecten como usuarios independientes. Tu plan determina el número de cuentas de personal que puedes crear.
+cta:
+  title: Pruebe GOYRENT gratis 
+  description: Inicie su prueba gratuita de 15 días, sin hacer ninguna transferencia.
+  links:
+    - label: Probar gratis ahora
+      size: xl
+      color: black
+      to: /pricing
+    - label: Ver demostración
+      size: xl
+      trailingIcon: 'i-heroicons-arrow-right-20-solid'
+      color: gray
+      to: /pricing

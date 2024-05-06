@@ -1,0 +1,23 @@
+title: Términos y condiciones
+navigation.title: 'Términos y condiciones'
+navigation.icon: i-ph-lifebuoy-duotone
+description: Última actualización 12 de abril de 2021
+hero:
+  title: Términos y condiciones
+  description: Última actualización 12 de abril de 2021
+  align: center
+cta:
+  title: Pruebe GOYRENT gratis 
+  description: Inicie su prueba gratuita de 15 días, sin hacer ninguna transferencia.
+  links:
+    - label: Probar gratis ahora
+      size: xl
+      color: black
+      to: /pricing
+    - label: Ver demostración
+      size: xl
+      trailingIcon: 'i-heroicons-arrow-right-20-solid'
+      color: gray
+      to: /pricing
+mdc: Este documento contiene los términos y condiciones generales aplicables al uso del servicio GOYRENT, prestado por Salad Days B.V., con sede en Blokhuisplein 40, 8911 LJ en Leeuwarden, Países Bajos, e inscrita en la Cámara de Comercio de KVK Países Bajos con el número de registro 52866297 (en adelante, «Booqable»).
+    # 1. Disposiciones introductorias

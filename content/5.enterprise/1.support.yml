@@ -1,0 +1,73 @@
+title: Soporte
+navigation.title: 'Support'
+navigation.icon: i-ph-lifebuoy-duotone
+description: Get professional support by Vue and Nuxt experts to achieve your objectives and overcome any challenge.
+            We provide expertise and guidance to companies using Vue and Nuxt, including assistance with project architecture, performance optimization, best practices, and troubleshooting.
+hero:
+  title: Servicios profesionales de GOYRENT
+  description: Obtén apoyo profesional de los expertos de GOYRENT para lograr tus objetivos y superar cualquier desafío. Brindamos experiencia y orientación a las empresas que utilizan GOYRENT.
+  align: center
+  items:
+    - title: Envíanos un mensaje
+      icon: i-heroicons-chat-bubble-left-right
+      description: Haga clic aquí para enviarnos un mensaje o correo electrónico a support@goyrent.cu
+    - title: Lea nuestro Centro de ayuda
+      icon: i-heroicons-question-mark-circle
+      description: Consulte nuestro centro de ayuda para encontrar las respuestas a sus preguntas.
+    - title: Vea nuestros videos 
+      icon: i-heroicons-play-circle
+      description: Vea nuestros videos paso a paso en YouTube.
+logos:
+  - src: '/assets/support/malt.svg'
+    width: '85'
+  - src: '/assets/support/zadig-and-voltaire.svg'
+    width: '176'
+  - src: '/assets/support/adyen.svg'
+    width: '75'
+  - src: '/assets/support/world-wide-technology.svg'
+    width: '116'
+  - src: '/assets/support/cora.svg'
+    width: '29'
+  - src: '/assets/support/mir.svg'
+    width: '55'
+  - src: '/assets/support/tchibo.svg'
+    width: '85'
+  - src: '/assets/support/about-you.svg'
+    width: '120'
+testimonials:
+  - quote: "Choosing NuxtLabs for an audit of our Nuxt project was a game-changer. Their detailed insights significantly enhanced our site's performance and the quality of our code. We're grateful for their support and highly recommend them to others."
+    author:
+      name: 'Melene Ulm'
+      description: 'Web Developer @ Mobile Industrial Robots'
+  - quote: "I'd highly recommend their services for anyone looking into Nuxt, to ensure you get all the benefits that it can provide and make sure your team follow all the best practice design patterns."
+    author:
+      name: 'James Baddiley'
+      description: 'CEO/CTO Chillisauce.com'
+  - quote: "The expert provided us with valuable feedback, which included improvements on how we can utilize Nuxt and the ecosystem more effectively, raising questions about the background of historic implementation and finding bugs that we did not yet catch."
+    author:
+      name: 'Robert K Pauls'
+      description: 'Lead Frontend Engineer @ Scayle'
+faq:
+  title: Preguntas frecuentes
+  description: Estas son algunas de las preguntas más comunes que nos hacen sobre los servicios de soporte de GOYRENT.
+  items:
+    - label: ¿Cuáles son los pasos a seguir para acceder a los servicios profesionales de GOYRENT?
+      content: Comenzamos con una reunión de introducción para recopilar información sobre su contexto y objetivos. A continuación, le proporcionamos un presupuesto adaptado a sus necesidades. Una vez confirmado, te presentamos al GOYRENT Expert, elegimos fechas en común, configuramos el canal de comunicación y los accesos necesarios.
+      defaultOpen: true
+    - label: ¿Qué tipo de servicios realizamos?
+      content: Brindamos experiencia y orientación a las empresas que utilizan GOYRENT.
+    - label: ¿Quiénes son los expertos de GOYRENT?
+      content: Los expertos de GOYRENT son miembros del equipo central de nuestra organización o colaboradores elegidos. El más alto nivel de experiencia que pueda encontrar. 
+cta:
+  title: Pruebe GOYRENT gratis 
+  description: Inicie su prueba gratuita de 15 días, sin hacer ninguna transferencia.
+  links:
+    - label: Probar gratis ahora
+      size: xl
+      color: black
+      to: /pricing
+    - label: Ver demostración
+      size: xl
+      trailingIcon: 'i-heroicons-arrow-right-20-solid'
+      color: gray
+      to: /pricing

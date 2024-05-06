@@ -1,0 +1,116 @@
+title: About
+navigation.title: 'About'
+navigation.icon: i-ph-lifebuoy-duotone
+description: Get professional support by Vue and Nuxt experts to achieve your objectives and overcome any challenge.
+            We provide expertise and guidance to companies using Vue and Nuxt, including assistance with project architecture, performance optimization, best practices, and troubleshooting.
+hero:
+  title: Contrata a expertos para poner en línea tu negocio
+  description: GoYRENT Experts puede ayudarte con cualquier cosa, desde la integración de GoYRENT hasta la construcción de un nuevo sitio web.
+  align: left
+  links:
+    - label: Explorar expertos
+      to: '#experts'
+      size: xl
+      color: black
+      icon: i-heroicons-arrow-right-20-solid
+      trailing: true
+sections:
+  - title: Trabajar con Booqable Experts 
+    description: Simplifique sus flujos de trabajo diarios con un software de gestión de alquileres que le ayuda
+    id: features
+    align: right
+    features:
+      - name: Encuentra expertos locales
+        description:  Busca en nuestra lista de agencias y autónomos para encontrar la opción más adecuada para tu negocio de alquiler.
+        icon: i-heroicons-cog
+      - name: Contacta con nosotros
+        description: Ponte en contacto con Booqable Experts y recibe una propuesta con los plazos y costes exactos.
+        icon: i-heroicons-check
+      - name: Logra resultados profesionales
+        description: Obtén ayuda de profesionales cualificados y de confianza que realizan un trabajo de alta calidad.
+        icon: i-heroicons-lock-closed
+    links:
+      - label: Explore components
+        to: /pro/components
+        color: gray
+        icon: i-heroicons-arrow-right-20-solid
+        trailing: true
+        size: md
+        class: ml-8
+  - title: ¿Quiénes son los expertos de Booqable Experts?
+    description: Diseñadores y desarrolladores independientes que se especializan en la construcción de sitios web exitosos, la integración de Booqable, y más.
+    align: left
+    features:
+      - name: Agencias y autónomos altamente cualificados
+        icon: i-heroicons-check
+      - name: Reuniones individuales con especialistas
+        icon: i-heroicons-check
+      - name: Total transparencia de principio a fin
+        icon: i-heroicons-check
+    links:
+      - label: Learn more
+        to: /pro/guide/content
+        color: gray
+        icon: i-heroicons-arrow-right-20-solid
+        trailing: true
+        size: md
+        class: ml-8
+services:
+  title: Explora los servicios ofrecidos por GoYRENT Experts
+  description: A continuación encontrarás algunos de los servicios más populares ofrecidos por Booqable Experts.
+  items:
+    - title: Configuración de los ajustes de la tienda
+      icon: i-heroicons-building-storefront
+      img: https://picsum.photos/640/360?grayscale
+      description: Obtén ayuda para configurar aspectos como los pagos, los campos de pago, las cuentas de acceso de los clientes y los períodos de alquiler seleccionables.
+    - title: Configuración de inventarios y precios
+      icon: i-heroicons-swatch
+      description: Configura los métodos de seguimiento de tus productos, las variaciones, las imágenes, las descripciones y las reglas de precios personalizadas.
+    - title: Marqueting y generacion de contenido para tu marca
+      icon: i-heroicons-swatch
+      description: Posicionamiento de marcas en los entornos digitales, asesoramiento legal para mi negocio, 
+    - title: Orientación de expertos
+      icon: i-heroicons-swatch
+      description: Habla con un experto de Booqable y obtén estrategias para mejorar tus flujos de trabajo, la experiencia del cliente y mucho más.
+experts:
+  title: Descubre a los expertos de GoYRENT en tu zona
+  description: Examina las agencias locales y los autónomos para encontrar la opción más adecuada para tu negocio de alquiler.
+  members:
+    - name: 'Sustainable Digital'
+      location: 'Vermont, United States'
+      logo: 'https://avatars.githubusercontent.com/u/739984?v=4'
+      to: 'https://volta.net'
+      services:
+        - name: Instalación de GoYRENT
+        - name: Estrategia de marketing
+        - name: Identidad de la marca
+    - name: JMarketing
+      location: La Lisa, La Habana
+      logo: 'https://avatars.githubusercontent.com/u/739984?v=4'
+      to: 'https://volta.net'
+      services:
+        - name: Instalación de GoYRENT
+        - name: Estrategia de marketing
+        - name: Identidad de la marca
+    - name: 'Evolusium'
+      location: 'Los Arabos, Matanzas'
+      logo: '/assets/support/zadig-and-voltaire.svg'
+      to: '/assets/support/zadig-and-voltaire'
+      services:
+        - name: Instalación de GoYRENT 
+        - name: Marketing de contenidos
+        - name: Diseño del logotipo
+
+cta:
+  title: Pruebe GoYRENT gratis 
+  description: Inicie su prueba gratuita de 15 días, sin hacer ninguna transferencia.
+  links:
+    - label: Probar gratis ahora
+      size: xl
+      color: black
+      to: /pricing
+    - label: Ver demostración
+      size: xl
+      trailingIcon: 'i-heroicons-arrow-right-20-solid'
+      color: gray
+      to: /pricing
