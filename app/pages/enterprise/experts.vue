@@ -31,7 +31,7 @@ defineOgImage({
   <UPage v-if="page">
     <UContainer>
       <ULandingSection v-bind="page.hero">
-        <img src="/img/GOYRENT.jpeg" class="w-full rounded-md shadow-xl ring-1 ring-gray-300 dark:ring-gray-700">
+        <img src="/img/GoYRENT.jpeg" class="w-full rounded-md shadow-xl ring-1 ring-gray-300 dark:ring-gray-700">
       </ULandingSection>
 
 
