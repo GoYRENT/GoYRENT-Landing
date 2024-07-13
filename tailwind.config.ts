@@ -7,11 +7,6 @@ export default <Partial<Config>>{
       fontFamily: {
         sans: ['DM Sans', ...defaultTheme.fontFamily.sans]
       }
-    },
-    // colors: {
-    //   blue: {
-    //     900: '#17275c',
-    // },
-  // },
+    }
   }
 }

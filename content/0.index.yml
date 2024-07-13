@@ -2,13 +2,13 @@ title: GOYRENT
 description: Nuxt UI Pro is a collection of premium Vue components built on top of Nuxt UI to create beautiful & responsive Nuxt applications in minutes.
 navigation: false
 hero:
-  title: 'Un software de alquiler <br><span class="text-primary">para todos los negocios</span>'
+  title: 'Un software de alquiler para<br><span class="bg-gradient-to-r bg-clip-text text-transparent font-bold from-orange-500 from-10% via-violet-500 via- to-blue-500 to-80%"> todos los negocios</span> '
   description: Descubra las herramientas y la asistencia que necesita para gestionar
           y hacer crecer su negocio con nuestro software de alquiler todo en
           uno.
   headline:
-    label: Made with Nuxt UI Pro
-    to: https://ui.nuxt.com/pro
+    label: Descubre las industrias que se benefician con nosotros
+    to: /industries
     icon: i-heroicons-arrow-top-right-on-square-20-solid
   links:
     - label: Probar gratis
@@ -24,9 +24,10 @@ hero:
       to: https://github.com/nuxt-ui-pro/saas
       target: _blank
 sections:
-  - title: El poder de nuestro servicio 
+  - title: El <span class="text-gradient bg-gradient-to-r bg-clip-text text-transparent font-bold from-orange-500 from-10% via-violet-500 via- to-blue-500 to-80%"> poder </span> de nuestro servicio 
     description: Simplifique sus flujos de trabajo diarios con un software de gestión de alquileres que le ayuda
     id: features
+    image: 'features/GoYRENT.jpeg'
     align: left
     features:
       - name: Cree, gestione y tramite pedidos fácilmente.
@@ -46,8 +47,9 @@ sections:
         trailing: true
         size: md
         class: ml-8
-  - title: The speed of our service
+  - title: Libera el potencial de tu negocio de alquiler con GoYRENT
     description: Cillum sint enim excepteur ut deserunt qui nisi in deserunt in. Deserunt aliquip quis aliquip eu quis ex velit velit nostrud sit.
+    image: 'features/GoYRENT.jpeg'
     align: right
     features:
       - name: Fast
@@ -68,31 +70,40 @@ sections:
         size: md
         class: ml-8
 features:
-  title: Why choose our service?
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  title: ¿Por qué elegir nuestros servicios?
+  description: En GoYRENT, nos enorgullece ofrecer la solución más completa y confiable para la gestión de negocios de alquiler. Nuestro software ha sido diseñado por emprendedores, con el objetivo de simplificar y optimizar cada paso de tus operaciones.
   items:
-    - title: Easy to use
-      description: Id laborum laboris duis nostrud excepteur ut velit nulla magna Lorem proident non.
-      icon: i-heroicons-cog
-    - title: Reliable
-      description: Magna Lorem ex cillum fugiat ad enim aute irure sit duis minim.
-      icon: i-heroicons-check
-    - title: Secure
-      description: Proident nostrud excepteur sint ut culpa consectetur aute adipisicing non anim ullamco.
-      icon: i-heroicons-lock-closed
-    - title: Fast
-      description: Qui reprehenderit nostrud dolore nisi ad fugiat labore eiusmod sint aliquip nisi voluptate.
-      icon: i-heroicons-rocket-launch
-    - title: Affordable
-      description: Reprehenderit fugiat elit in do ipsum ut pariatur.
+    - title: Sencillo y Fácil de usar
+      description: Diseñado con la experiencia del usuario en mente. Simplifica tu trabajo y te brinda una solución eficiente.
+      icon: i-fluent-hand-open-heart-20-regular
+    - title: Control total del inventario
+      description: Controla tu inventario de alquiler con precisión, saber qué tienes disponible, qué está alquilado y el estado de tus artículos ahora es mucho mejor.
+      icon: i-fluent-box-multiple-20-regular
+    - title: Confiabilidad a toda prueba
+      description: Plataforma segura respaldada por tecnología de vanguardia. Tus datos estarán protegidos y podrás operar con total tranquilidad.
+      icon: i-fluent-shield-lock-20-regular
+    - title: Automatización de procesos
+      description: El software automatiza tareas como la generación de contratos, facturación, cobros y programación de reservas, ahorrándote tiempo y esfuerzo.
+      icon: i-fluent-arrow-flow-up-right-rectangle-multiple-20-filled
+    - title: Económico
+      description: GoYRENT no cobra ninguna tasa de transacción ni comisión por las reservas
       icon: i-heroicons-currency-dollar
-    - title: Scalable
-      description: Lorem deserunt et eiusmod. Ea in consectetur minim officia ullamco enim deserunt est.
+    - title: Visibilidad en tiempo real
+      description: Tendrás una visión completa de tu negocio en todo momento, pudiendo ver las reservas, disponibilidad, historial de clientes y más, todo en una sola plataforma
+      icon: i-heroicons-eye
+    - title: Análisis de datos e informes
+      description: Obtendrás informes detallados sobre el rendimiento de tu negocio, lo que te permitirá tomar decisiones estratégicas informadas
+      icon: i-fluent-chart-multiple-24-regular
+    - title: Escalabilidad y flexibilidad
+      description: El software se adapta a medida que tu negocio crece, pudiendo agregar más usuarios, ubicaciones o funcionalidades según tus necesidades.
       icon: i-heroicons-chart-bar
+    - title: Soporte experto
+      description: Contamos con una red de expertos que brindan sus servicios personalizados y los ayudará a crecer sus negocio aún más.
+      icon: i-fluent-handshake-16-regular
 testimonials:
   headline: Testimonios
-  title: Lo que la gente dice de GOYRENT
-  description: Proident sunt exercitation minim laborum enim laboris labore esse.
+  title: Lo que dicen sobre GoYRENT 
+  description: Estas son alugas de las experiencias de nuestros clientes y sus casos de éxito
   items:
     - quote: Nostrud tempor sunt fugiat. Dolor in sint dolore labore non occaecat adipisicing Lorem labore ullamco enim excepteur. In fugiat Lorem sit velit id veniam esse eiusmod non ea voluptate cupidatat reprehenderit ullamco dolore. Mollit laborum occaecat aliquip.
       author:
@@ -138,7 +149,7 @@ testimonials:
           loading: lazy
 cta:
   title: Comenzar hoy
-  description: Nisi mollit id aliquip sunt est laborum sit sit.
+  description: ¡Eleva tu negocio de alquiler al próximo nivel con GoYRENT! Contacta a nuestro equipo de ventas y descubre cómo nuestra solución puede transformar tu empresa.
   links:
     - label: Probar gratis ahora
       size: xl

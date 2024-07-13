@@ -5,37 +5,47 @@ description: Get professional support by Vue and Nuxt experts to achieve your ob
             We provide expertise and guidance to companies using Vue and Nuxt, including assistance with project architecture, performance optimization, best practices, and troubleshooting.
 hero:
   title: ...para ayudar a otras empresas de alquiler a crecer
-  description: En Booqable, nos comprometemos a ayudar a los negocios de alquiler a tener éxito facilitando la gestión del inventario y la aceptación de reservas en línea. Cada día, miles de personas de todo el mundo confían en nuestro software de alquiler para gestionar su negocio.
-              Estamos constantemente recogiendo los comentarios de los clientes y mejorando nuestro producto para satisfacer las necesidades cambiantes de nuestros clientes, los propietarios de negocios de alquiler. Booqable soporta flujos de trabajo ágiles y flexibles. Nuestro producto ayuda a los equipos a organizar su inventario, automatizar las tareas diarias y conseguir más reservas a través de su tienda en línea.
+  description: En GoYRENT, entendemos que expandir tu negocio de alquiler puede ser un desafío. Por eso, hemos diseñado una solución integral que te brinda las herramientas y el apoyo necesarios para alcanzar tus metas de crecimiento.<br>
+              Nuestra plataforma te permite ampliar tu catálogo de productos y servicios de alquiler de manera rápida y eficiente. Gracias a nuestras funcionalidades avanzadas de gestión de inventario, programación y facturación, podrás optimizar tus operaciones y liberar recursos para enfocarte en el desarrollo de tu empresa.<br>
+              Además, te conectamos con una amplia base de clientes que buscan las soluciones de alquiler que tú ofreces. Nuestros expertos te apoyan con estrategias de marketing, ventas y mucho más para que puedas llegar a nuevos públicos y aumentar tus ingresos.<br>
+              
+              Nos comprometemos a ayudar a los negocios de alquiler a tener éxito facilitando la gestión del inventario y la aceptación de reservas en línea. Cada día, más personas confían en nuestro software de alquiler para gestionar su negocio.
+              
   align: center
 features:
   title: Optimiza tu consumo, alquila en lugar de comprar.
   description: Al alquilar en lugar de comprar, se puede disfrutar de la funcionalidad de un producto por un período específico, evitando la necesidad de poseerlo permanentemente, lo que puede contribuir a la disminución del desperdicio y la huella ambiental.
   items:
-    - title: El espíritu empresarial local
+    - title: El espíritu del emprendimiento
       icon: i-heroicons-building-storefront
-      description: Los negocios de alquiler son el parangón del empresariado local. Creemos que los alquileres seguirán siendo siempre locales y orientados a la comunidad.
-    - title: Sostenibilidad
-      icon: i-heroicons-swatch
-      description: Todo lo que compramos tiene un impacto en nuestro planeta. El alquiler es la alternativa sostenible para prolongar la vida útil de un producto y reducir los residuos.
-    - title: Accesibilidad
-      icon: i-heroicons-swatch
-      description: Alquilar debería ser tan sencillo como comprar, tanto en línea como en la tienda, para satisfacer las demandas del consumidor moderno y mejorar la experiencia.
+      description: Nuestra plataforma de alquiler empodera a pequeños y medianos negocios, brindándoles acceso a los recursos que necesitan para crecer sin grandes inversiones. Apoya el desarrollo de tu comunidad al optimizar el uso de activos y reducir el desperdicio.
+    - title: Compromiso con la sostenibilidad
+      icon: i-fluent-earth-leaf-16-regular
+      description: Al impulsar el modelo de economía circular a través del alquiler, GoYRENT ayuda a extender la vida útil de los bienes y productos, reduciendo el desperdicio y promoviendo un uso más eficiente de los recursos
+    - title: La solución de no saber dónde encontrar
+      icon: i-fluent-box-multiple-search-20-regular
+      description: Creemos que el alquiler debería ser tan accesible y conveniente como la compra, tanto en línea como en tienda física. Nuestra solución satisface las demandas del consumidor moderno, brindando una experiencia de alquiler sencilla e intuitiva.
 team:
   title: Nuestro equipo
   description: Con sede en el Parque Científico Tecnológico de La Habana, GOYRENT es una empresa que da prioridad a las actividades a distancia, con un equipo que trabaja y vive en diferentes provincias del país.
   members:
     - name: 'Yurier Herrera'
-      description: 'Fundador y Director General'
-      img: '/assets/support/zadig-and-voltaire.svg'
+      description: 'Director Ejecutivo'
+      img: '/team/Ellipse 7.png'
+    - name: 'Samuel Ojeda'
+      description: 'Ingeniería'
+      img: '/team/Ellipse 8.png'
+    - name: 'Yurier Herrera'
+      description: 'Marketing'
+      img: '/team/Ellipse 3.png'
     - name: 'Yurier Herrera'
       description: 'Fundador y Director General'
-      img: '/assets/support/zadig-and-voltaire.svg'
+      img: '/team/Ellipse 8.png'
     - name: 'Yurier Herrera'
       description: 'Fundador y Director General'
-      img: '/assets/support/zadig-and-voltaire.svg'
+      img: '/team/Ellipse 8.png'
 cta:
-  title: Pruebe GOYRENT gratis 
+  title: Pruebe GoYRENT gratis 
   description: Inicie su prueba gratuita de 15 días, sin hacer ninguna transferencia.
   links:
     - label: Probar gratis ahora

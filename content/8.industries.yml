@@ -1,0 +1,225 @@
+title: Industrias-GOYRENT
+description: Nuxt UI Pro is a collection of premium Vue components built on top of Nuxt UI to create beautiful & responsive Nuxt applications in minutes.
+navigation: false
+hero:
+  title: 'Alquileres sostenibles para un mercado en <br><span class="bg-gradient-to-r bg-clip-text text-transparent font-bold from-orange-500 from-10% via-violet-500 via- to-blue-500 to-80%"> crecimiento</span> '
+  description: El tamaño del mercado mundial de alquiler de productos para fiestas fue de +2k millones de dólares en 2022 y alcanzará +5k millones de dólares en 2029  
+  align: left    
+  links:
+    - label: Probar gratis
+      to: '/signup'
+      size: xl
+      color: black
+      icon: i-heroicons-arrow-right-20-solid
+      trailing: true
+    - label: Use this template
+      icon: i-simple-icons-github
+      size: xl
+      color: gray
+      to: https://github.com/nuxt-ui-pro/saas
+      target: _blank
+industries:
+  - title: Impulsa la gestión de eventos al siguiente nivel
+    headline: Comprometidos en el largo plazo
+    description: ¿Estás listo para llevar tu negocio de alquileres de eventos al siguiente nivel? ¡Descubre cómo este software puede transformar la forma en que administras tus operaciones y maximizar tus ganancias!
+    image: 'industries/pexels-jeremy-wong-382920-1035665.jpg'
+    align: left
+    links:
+    - label: Probar gratis
+      to: '/signup'
+      size: xl
+      color: black
+      icon: i-heroicons-arrow-right-20-solid
+      trailing: true
+    - label: ver
+      icon: i-simple-icons-github
+      size: xl
+      color: gray
+      to: https://github.com/nuxt-ui-pro/saas
+      target: _blank
+  - title: Potencie su negocio de alquiler de carros con funciones de última generación
+    headline: Impulse su negocio sobre ruedas
+    description: ¿Estás listo para llevar tu negocio de alquileres de eventos al siguiente nivel? ¡Descubre cómo este software puede transformar la forma en que administras tus operaciones y maximizar tus ganancias!
+    image: 'industries/pexels-wolfgang-weiser-467045605-16643639.jpg'
+    align: left
+    links:
+    - label: Probar gratis
+      to: '/signup'
+      size: xl
+      color: black
+      icon: i-heroicons-arrow-right-20-solid
+      trailing: true
+    - label: ver
+      icon: i-simple-icons-github
+      size: xl
+      color: gray
+      to: https://github.com/nuxt-ui-pro/saas
+      target: _blank
+  - title: Transforma tu negocio de bicicletas con la solución integral de gestión de alquileres
+    headline: Comprometidos en el largo plazo
+    description: Diseñado para permite administrar de manera eficiente y rentable tu negocio de alquiler de bicicletas, optimizando tus operaciones, aumentando los ingresos y brindando una experiencia excepcional a tus clientes.
+    image: 'industries/pexels-henry-acevedo-382866382-19138765.jpg'
+    align: left
+    links:
+    - label: Probar gratis
+      to: '/signup'
+      size: xl
+      color: black
+      icon: i-heroicons-arrow-right-20-solid
+      trailing: true
+    - label: Use this template
+      icon: i-simple-icons-github
+      size: xl
+      color: gray
+      to: https://github.com/nuxt-ui-pro/saas
+      target: _blank
+  - title: Ponte al día con la industria del alquiler de 
+    description: Diseñado para permite administrar de manera eficiente y rentable tu negocio de alquiler de bicicletas, optimizando tus operaciones, aumentando los ingresos y brindando una experiencia excepcional a tus clientes.
+    image: 'industries/pexels-yaw-afari-188361668-12005675.jpg'
+    align: left
+    links:
+    - label: Probar gratis
+      to: '/signup'
+      size: xl
+      color: black
+      icon: i-heroicons-arrow-right-20-solid
+      trailing: true
+    - label: Use this template
+      icon: i-simple-icons-github
+      size: xl
+      color: gray
+      to: https://github.com/nuxt-ui-pro/saas
+      target: _blank
+
+sections:
+  - title: Negocios empoderados tienen un mejor control de los datos
+    headline: Comprometidos en el largo plazo
+    description: Diseñado para permite administrar de manera eficiente y rentable tu negocio de alquiler de bicicletas, optimizando tus operaciones, aumentando los ingresos y brindando una experiencia excepcional a tus clientes.
+    id: features
+    image: 'industries/pexels-amos-getanda-244415932-20076477.jpg'
+    align: left
+    features:
+      - name: Cree, gestione y tramite pedidos fácilmente.
+        description:  Tanto si atiende a clientes sin cita previa como si acepta reservas por Internet.
+        icon: i-heroicons-cog
+      - name: Automatice la gestión de su inventario.
+        description: Se acabaron las conjeturas, las reservas dobles y las carencias.
+        icon: i-heroicons-check
+      - name: Secure
+        description: Proident nostrud excepteur sint ut culpa consectetur aute adipisicing.
+        icon: i-heroicons-lock-closed
+    links:
+      - label: Explore components
+        to: /pro/components
+        color: gray
+        icon: i-heroicons-arrow-right-20-solid
+        trailing: true
+        size: md
+        class: ml-8
+  - title: Mantén tu negocio de alquiler, bajo control
+    headline: Mantén tu negocio de alquiler, bajo control
+    description: Todo lo que tú y los miembros de tu negocio necesitan para gestionar las complicaciones del trabajo (y la vida).
+    image: 'industries/heavy-equipment-repair-bucks-county-pa.jpg'
+    align: right
+    features:
+      - name: Clientes fidelizados
+        description: Una experiencia de alquiler sin problemas, desde la reserva en línea hasta la devolución del equipo de alquiler, aumenta la fidelidad del cliente.
+        icon: i-heroicons-user-group
+      - name: Contratos personalizados
+        description: Reprehenderit fugiat elit in do ipsum ut pariatur.
+        icon: i-heroicons-document-duplicate
+      - name: Estadísticas
+        description: Controla y monitorea los días con beneficios 
+        icon: i-heroicons-chart-bar
+      - name: Aumento el potencial de los ingresos
+        description: La optimización de los precios y la reducción del tiempo de inactividad y de las oportunidades de venta pueden aumentar significativamente los ingresos.
+        icon: i-heroicons-currency-dollar
+    links:
+      - label: Learn more
+        to: /pro/guide/content
+        color: gray
+        icon: i-heroicons-arrow-right-20-solid
+        trailing: true
+        size: md
+        class: ml-8
+features:
+  title: Why choose our service?
+  description: Solución de gestión de alquileres para todos los sectores, tipos de empresas y tamaños.
+  items:
+    - title: Easy to use
+      description: Id laborum laboris duis nostrud excepteur ut velit nulla magna Lorem proident non.
+      icon: i-heroicons-cog
+    - title: Reliable
+      description: Magna Lorem ex cillum fugiat ad enim aute irure sit duis minim.
+      icon: i-heroicons-check
+    - title: Secure
+      description: Proident nostrud excepteur sint ut culpa consectetur aute adipisicing non anim ullamco.
+      icon: i-heroicons-lock-closed
+    - title: Fast
+      description: Qui reprehenderit nostrud dolore nisi ad fugiat labore eiusmod sint aliquip nisi voluptate.
+      icon: i-heroicons-rocket-launch
+    - title: Affordable
+      description: Reprehenderit fugiat elit in do ipsum ut pariatur.
+      icon: i-heroicons-currency-dollar
+    - title: Scalable
+      description: Lorem deserunt et eiusmod. Ea in consectetur minim officia ullamco enim deserunt est.
+      icon: i-heroicons-chart-bar
+testimonials:
+  headline: Testimonios
+  title: Lo que dicen sobre GoYRENT 
+  description: Lee sobre las experiencias de nuestros clientes y sus casos de éxito
+  items:
+    - quote: Nostrud tempor sunt fugiat. Dolor in sint dolore labore non occaecat adipisicing Lorem labore ullamco enim excepteur. In fugiat Lorem sit velit id veniam esse eiusmod non ea voluptate cupidatat reprehenderit ullamco dolore. Mollit laborum occaecat aliquip.
+      author:
+        name: Rose Roberson
+        description: Director del PCT de La Habana
+        avatar:
+          src: https://i.pravatar.cc/120?img=1
+          loading: lazy
+    - quote: Eiusmod dolor aute ut nulla pariatur officia consequat aute amet exercitation.
+      author:
+        name: Chace Rodgers
+        description: CEO at Company
+        avatar:
+          src: https://i.pravatar.cc/120?img=7
+          loading: lazy
+    - quote: Id duis velit enim officia ad nisi incididunt magna ex dolor minim deserunt dolor. Esse incididunt cillum nostrud esse do quis amet labore amet nulla eiusmod amet nulla Lorem. Incididunt ex voluptate irure officia laboris ea proident est qui.
+      author:
+        name: Cornelius Sheppard
+        description: CEO at Company
+        avatar:
+          src: https://i.pravatar.cc/120?img=3
+          loading: lazy
+    - quote: Velit consectetur in adipisicing culpa eiusmod commodo eu ex dolore. Officia irure nisi dolor dolore velit fugiat. Aliqua sint aliqua aute elit eu sunt.
+      author:
+        name: Destinee Woods
+        description: CEO at Company
+        avatar:
+          src: https://i.pravatar.cc/120?img=5
+          loading: lazy
+    - quote: Proident quis deserunt qui ex exercitation veniam id Lorem est cupidatat ipsum irure aliquip ad.
+      author:
+        name: Kaleb Mccormick
+        description: CEO at Company
+        avatar:
+          src: https://i.pravatar.cc/120?img=8
+          loading: lazy
+    - quote: Magna officia quis ea ea in officia non voluptate ipsum culpa do labore sunt. Aute est dolore commodo sint officia ad laboris dolor magna aliquip exercitation tempor commodo.
+      author:
+        name: Jazmin Mccall
+        description: CEO at Company
+        avatar:
+          src: https://i.pravatar.cc/120?img=9
+          loading: lazy
+cta:
+  title: Empiece hoy
+  description: Explora GoYRENT a tu propio ritmo. Crea una cuenta gratuita y descubre cómo nuestra plataforma puede simplificar la gestión de tus alquileres. Si tienes alguna duda, por favor envianos un mensaje, estaremos encantados de responderle.
+  links:
+    - label: Probar gratis ahora
+      size: xl
+      color: black
+      to: /pricing
+    - label: Enviar mensaje
+      size: xl
+      color: gray
+      to: /enterprise/support
