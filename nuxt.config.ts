@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     '@nuxthq/studio',
     '@vueuse/nuxt',
     'nuxt-og-image',
-    '@pinia/nuxt',
+    '@pinia/nuxt'
   ],
 
   hooks: {
@@ -24,7 +24,7 @@ export default defineNuxtConfig({
   },
 
   ui: {
-    icons: ['heroicons', 'simple-icons', 'fluent']
+    icons: ['heroicons', 'simple-icons', 'fluent', 'ph']
   },
 
   colorMode: {

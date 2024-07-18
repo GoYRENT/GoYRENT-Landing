@@ -23,13 +23,13 @@ const links = [{
   icon: 'i-heroicons-square-3-stack-3d',
   children: [{
     label: 'Sitios de clientes',
-    to: '/customer-websites',
-    icon: 'i-heroicons-building-storefront-solid',
+    to: '/',
+    icon: 'i-ph-storefront-duotone',
     description: 'Visita las diferentes tiendas de nuestros clientes.'
   }, {
     label: 'Historias de clientes',
     to: '/customer-stories',
-    icon: 'i-heroicons-book-open-solid',
+    icon: 'i-ph-book-open-duotone',
     description: 'Entérate de las diferentes historias inspiradoras.'
   }]
 },{
@@ -39,23 +39,23 @@ const links = [{
   {
     label: 'Blog',
     to: '/blog',
-    icon: 'i-heroicons-newspaper-solid',
+    icon: 'i-ph-newspaper-duotone',
     description: 'A simple pricing, for solo developers or teams.'
   },{
     label: 'Expertos de GOYRENT',
     to: '/enterprise/experts',
-    icon: 'i-heroicons-user-group-solid',
+    icon: 'i-ph-users-four-duotone',
     description: 'Contacta con expertos de GOYRENT para que te ayudemos a crecer en tu negocio.'
   }, {
     label: 'Centro de ayuda',
     to: '/help',
-    icon: 'i-heroicons-question-mark-circle-solid',
+    icon: 'i-ph-question-duotone',
     description: 'Get started with one of our official templates.'
   },
   {
     label: 'Acerca de',
     to: '/enterprise/about',
-    icon: 'i-heroicons-information-circle-solid',
+    icon: 'i-ph-info-duotone',
     description: 'Get started with one of our official templates.'
   }]
 },

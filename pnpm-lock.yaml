@@ -14,6 +14,9 @@ importers:
       '@iconify-json/heroicons':
         specifier: ^1.1.21
         version: 1.1.21
+      '@iconify-json/ph':
+        specifier: ^1.1.13
+        version: 1.1.13
       '@iconify-json/simple-icons':
         specifier: ^1.1.109
         version: 1.1.109
@@ -831,6 +834,9 @@ packages:
 
   '@iconify-json/logos@1.1.43':
     resolution: {integrity: sha512-UtvL1yDHUr9dl1Tqihh6K9m5dmbYKOYyLf3i9aKhymSW76QjOCGjpgQc0PQ4GJCAdU1cAMu+WO61TgPxdonrlg==}
+
+  '@iconify-json/ph@1.1.13':
+    resolution: {integrity: sha512-xtM4JJ63HCKj09WRqrBswXiHrpliBlqboWSZH8odcmqYXbvIFceU9/Til4V+MQr6+MoUC+KB72cxhky2+A6r/g==}
 
   '@iconify-json/ri@1.1.21':
     resolution: {integrity: sha512-ssU2CRaB4T83Q3cncCZtITholhYkH6gEL5XLmdMII6Xzn8bTCpDCkt+HdX4URc24uUMD0PGIaNLJUIAgdfLMjQ==}
@@ -6481,6 +6487,10 @@ snapshots:
       '@iconify/types': 2.0.0
 
   '@iconify-json/logos@1.1.43':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/ph@1.1.13':
     dependencies:
       '@iconify/types': 2.0.0
 

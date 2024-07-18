@@ -33,7 +33,9 @@ onMounted(() => {
 
 <template>
   <div>
-    <NuxtLoadingIndicator />
+    <NuxtLoadingIndicator
+      color="repeating-linear-gradient(to right,#f97316 0%, #8b5cf6 50%,#3b82f6 100%)"
+    />
 
     <NuxtLayout>
       <NuxtPage />
