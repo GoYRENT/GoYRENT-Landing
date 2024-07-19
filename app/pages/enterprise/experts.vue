@@ -9,7 +9,6 @@ if (!page.value) {
 const title = page.value.head?.title || page.value?.title
 const description = page.value?.head?.description || page.value?.description
 
-
 useSeoMeta({
   titleTemplate: '%s · Enterprise',
   title,
@@ -21,19 +20,19 @@ useSeoMeta({
 defineOgImage({
   component: 'Saas',
   title: page.value.title,
-  description: page.value.description,
+  description: page.value.description
 })
-
-
 </script>
 
 <template>
   <UPage v-if="page">
     <UContainer>
       <ULandingSection v-bind="page.hero">
-        <img src="/img/GoYRENT.jpeg" class="w-full rounded-md shadow-xl ring-1 ring-gray-300 dark:ring-gray-700">
+        <img
+          src="/img/GoYRENT.jpeg"
+          class="w-full rounded-md shadow-xl ring-1 ring-gray-300 dark:ring-gray-700"
+        >
       </ULandingSection>
-
 
       <ULandingSection
         v-for="(section, index) in page.sections"
@@ -42,18 +41,28 @@ defineOgImage({
         :description="section.description"
         :features="section.features"
         :align="section.align"
-        :ui="{wrapper: 'py-4 sm:py-2', title: 'text-md sm:text-3xl'}"
+        :ui="{ wrapper: 'py-4 sm:py-2', title: 'text-md sm:text-3xl' }"
       >
         <img
-          src="/social-card.png"
+          src="/img/GoYRENT.jpeg"
           class="w-full rounded-xl shadow-xl ring-1 ring-gray-300 dark:ring-gray-700"
         >
       </ULandingSection>
 
-      <ULandingSection :title="page.services.title" :description="page.services.description">
+      <ULandingSection
+        :title="page.services.title"
+        :description="page.services.description"
+      >
         <UPageGrid>
-          <ULandingCard v-for="(item, index) in page.services.items" :key="index" v-bind="item">
-            <template v-if="item.img" #icon>
+          <ULandingCard
+            v-for="(item, index) in page.services.items"
+            :key="index"
+            v-bind="item"
+          >
+            <template
+              v-if="item.img"
+              #icon
+            >
               <img
                 :src="item.img"
                 class="w-full rounded-lg"
@@ -64,26 +73,36 @@ defineOgImage({
       </ULandingSection>
 
       <div id="experts">
-        <ULandingSection :title="page.experts.title" :description="page.experts.description">
+        <ULandingSection
+          :title="page.experts.title"
+          :description="page.experts.description"
+        >
           <UPageGrid>
-            <EnterpriseExpertCard v-for="(item, index) in page.experts.members" :key="index" v-bind="item" />
+            <EnterpriseExpertCard
+              v-for="(item, index) in page.experts.members"
+              :key="index"
+              v-bind="item"
+            />
           </UPageGrid>
         </ULandingSection>
       </div>
 
       <ULandingSection>
-      <ULandingCTA v-bind="page.cta" align="center" class=" dark:bg-gray-800/50 bg-[url('/public/social-card.png')]">
+        <ULandingCTA
+          v-bind="page.cta"
+          align="center"
+          class=" dark:bg-gray-800/50 bg-[url('/img/GoYRENT.jpeg')]"
+        >
         <!-- <img
           src="https://picsum.photos/640/360"
           class="w-full rounded-md shadow-xl ring-1 ring-gray-300 dark:ring-gray-700"
         /> -->
-      </ULandingCTA>
-
-    </ULandingSection>
-
-    </UContainer> 
+        </ULandingCTA>
+      </ULandingSection>
+    </UContainer>
   </UPage>
 </template>
+
 <style scoped lang="postcss">
 
 </style>

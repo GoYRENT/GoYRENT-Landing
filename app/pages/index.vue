@@ -12,18 +12,21 @@ useSeoMeta({
   ogDescription: page.value.description
 })
 
+defineOgImage({
+  component: 'OgImageSaas',
+  headline: 'Alquileres y préstamos',
+  title: page.value.title,
+  description: page.value.description
+})
 
 const carouselImages = [
   'img/pexels-reneasmussen-9974546.jpg',
   'img/pexels-jonathanborba-12876504.jpg',
   'img/pexels-shvetsa-4014733.jpg',
   'img/0c63a88795cda870145ca37d61648604.jpg',
-  
   'img/pexels-mucahitinnci-11791473.jpg',
   'img/pexels-zinep-17910625.jpg',
-
-  'img/pexels-broskibenigno-16138038.jpg',
-  
+  'img/pexels-broskibenigno-16138038.jpg'
 ]
 const carouselRef = ref()
 
@@ -38,27 +41,42 @@ onMounted(() => {
     carouselRef.value.next()
   }, 3000)
 })
-
 </script>
 
 <template>
   <div v-if="page">
     <ULandingHero
       :title="page.hero.title"
-      :description="page.hero.description" :links="page.hero.links"
+      :description="page.hero.description"
+      :links="page.hero.links"
     >
       <div class="absolute inset-0 landing-grid z-[-1] [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] gradient" />
 
       <template #headline>
-        <UBadge v-if="page.hero.headline" variant="subtle" size="lg" class="relative rounded-full font-semibold">
-          <NuxtLink :to="page.hero.headline.to" class="focus:outline-none" tabindex="-1">
-            <span class="absolute inset-0" aria-hidden="true" />
+        <UBadge
+          v-if="page.hero.headline"
+          variant="subtle"
+          size="lg"
+          class="relative rounded-full font-semibold"
+        >
+          <NuxtLink
+            :to="page.hero.headline.to"
+            class="focus:outline-none"
+            tabindex="-1"
+          >
+            <span
+              class="absolute inset-0"
+              aria-hidden="true"
+            />
           </NuxtLink>
 
           {{ page.hero.headline.label }}
 
-
-          <UIcon v-if="page.hero.headline.icon" :name="page.hero.headline.icon" class="ml-1 w-4 h-4 pointer-events-none" />
+          <UIcon
+            v-if="page.hero.headline.icon"
+            :name="page.hero.headline.icon"
+            class="ml-1 w-4 h-4 pointer-events-none"
+          />
         </UBadge>
       </template>
 
@@ -114,7 +132,11 @@ onMounted(() => {
         arrows
         class="rounded-lg"
       >
-        <img :src="item" class="w-full" draggable="false">
+        <img
+          :src="item"
+          class="w-full"
+          draggable="false"
+        >
       </UCarousel>
 
       <!-- <img
@@ -144,23 +166,43 @@ onMounted(() => {
       >
     </ULandingSection>
 
-
-    <ULandingSection :title="page.features.title" :description="page.features.description">
+    <ULandingSection
+      :title="page.features.title"
+      :description="page.features.description"
+    >
       <UPageGrid>
-        <ULandingCard v-for="(item, index) in page.features.items" :key="index" v-bind="item" />
+        <ULandingCard
+          v-for="(item, index) in page.features.items"
+          :key="index"
+          v-bind="item"
+        />
       </UPageGrid>
     </ULandingSection>
 
-    <ULandingSection :headline="page.testimonials.headline" :title="page.testimonials.title" :description="page.testimonials.description">
+    <ULandingSection
+      :headline="page.testimonials.headline"
+      :title="page.testimonials.title"
+      :description="page.testimonials.description"
+    >
       <UPageColumns class="xl:columns-4">
-        <div v-for="(testimonial, index) in page.testimonials.items" :key="index" class="break-inside-avoid">
-          <ULandingTestimonial v-bind="testimonial" class="bg-gray-100/50 dark:bg-gray-800/50" />
+        <div
+          v-for="(testimonial, index) in page.testimonials.items"
+          :key="index"
+          class="break-inside-avoid"
+        >
+          <ULandingTestimonial
+            v-bind="testimonial"
+            class="bg-gray-100/50 dark:bg-gray-800/50"
+          />
         </div>
       </UPageColumns>
     </ULandingSection>
 
     <ULandingSection>
-      <ULandingCTA v-bind="page.cta" class="bg-gray-100/50 dark:bg-gray-800/50" />
+      <ULandingCTA
+        v-bind="page.cta"
+        class="bg-gray-100/50 dark:bg-gray-800/50"
+      />
     </ULandingSection>
   </div>
 </template>
@@ -219,5 +261,4 @@ onMounted(() => {
   pointer-events: none;
   background: radial-gradient(50% 50% at 50% 50%, rgb(var(--color-primary-500) / 0.25) 0, #FFF 100%);
 }
-
 </style>

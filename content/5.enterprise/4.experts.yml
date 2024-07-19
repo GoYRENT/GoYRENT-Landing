@@ -73,7 +73,7 @@ services:
       icon: i-heroicons-swatch
       description: Habla con un experto de Booqable y obtén estrategias para mejorar tus flujos de trabajo, la experiencia del cliente y mucho más.
 experts:
-  title: Descubre a los expertos de GoYRENT en tu zona
+  title: Descubre a los colaboradores de GoYRENT en tu zona
   description: Examina las agencias locales y los autónomos para encontrar la opción más adecuada para tu negocio de alquiler.
   members:
     - name: 'Sustainable Digital'
@@ -94,8 +94,8 @@ experts:
         - name: Identidad de la marca
     - name: 'Evolusium'
       location: 'Los Arabos, Matanzas'
-      logo: '/assets/support/zadig-and-voltaire.svg'
-      to: '/assets/support/zadig-and-voltaire'
+      logo: 'https://avatars.githubusercontent.com/u/739984?v=4'
+      to: 'https://volta.net'
       services:
         - name: Instalación de GoYRENT 
         - name: Marketing de contenidos
