@@ -1,0 +1,59 @@
+version: "3"
+
+services:
+  goyrent-landing:
+    container_name: goyrent-landing
+    build:
+      dockerfile: Dockerfile
+      args:
+        NUXT_UI_PRO_LICENSE: ${NUXT_UI_PRO_LICENSE}
+        NUXT_PUBLIC_SITE_URL: ${NUXT_PUBLIC_SITE_URL}
+    environment:
+            - NUXT_UI_PRO_LICENSE= ${NUXT_UI_PRO_LICENSE}
+            - NUXT_PUBLIC_SITE_URL= ${NUXT_PUBLIC_SITE_URL}
+            - PORT= ${PORT}
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - goyrent_network
+
+  # Add more containers below (nginx, postgres, etc.)
+
+  # Config del nginx 
+  nginx-proxy:
+        image: nginxproxy/nginx-proxy
+        container_name: nginx-proxy
+        ports:
+            - '80:80'
+            - '443:443'
+        volumes:
+            - certs:/etc/nginx/certs
+            - vhost:/etc/nginx/vhost.d
+            - html:/usr/share/nginx/html
+            - /var/run/docker.sock:/tmp/docker.sock:ro
+        restart: always
+
+  # proxy inverso basado en Nginx que automatiza el proceso de obtención y renovación de certificados SSL/TLS de Let's Encrypt usando ACME (Automated Certificate Management Environment).     
+  acme-companion:
+        image: nginxproxy/acme-companion
+        container_name: nginx-proxy-acme
+        environment:
+            - DEFAULT_EMAIL=
+        volumes_from:
+            - nginx-proxy
+        volumes:
+            - acme:/etc/acme.sh
+            - /var/run/docker.sock:/var/run/docker.sock:ro
+        restart: always  
+
+networks:
+  goyrent_network:
+    external: false
+
+volumes:
+    conf:
+    vhost:
+    html:
+    certs:
+    acme:

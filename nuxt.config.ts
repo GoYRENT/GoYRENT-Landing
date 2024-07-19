@@ -38,9 +38,9 @@ export default defineNuxtConfig({
     '/docs': { redirect: '/docs/getting-started', prerender: false }
   },
 
-  server: {
-    port: process.env.PORT || 3001 // Usa el valor de la variable de entorno PORT o 3001 como predeterminado
-  },
+  // server: {
+  //   port: process.env.PORT || 3000 // Usa el valor de la variable de entorno PORT o 3001 como predeterminado
+  // },
 
   devtools: {
     enabled: true
