@@ -11,7 +11,8 @@ export default defineNuxtConfig({
     '@nuxthq/studio',
     '@vueuse/nuxt',
     'nuxt-og-image',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    'shadcn-nuxt'
   ],
 
   hooks: {
@@ -29,6 +30,17 @@ export default defineNuxtConfig({
 
   colorMode: {
     disableTransition: true
+  },
+  shadcn: {
+    /**
+     * Prefix for all the imported component
+     */
+    prefix: 'Ui',
+    /**
+     * Directory that the component lives in.
+     * @default "./components/ui"
+     */
+    componentDir: './app/components/ui'
   },
 
   routeRules: {

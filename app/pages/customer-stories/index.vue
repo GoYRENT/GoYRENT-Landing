@@ -27,9 +27,15 @@ defineOgImage({
 
 <template>
   <UContainer>
-    <UPageHeader v-bind="page" class="py-[50px]" />
+    <UPageHeader
+      v-bind="page"
+      class="py-[50px]"
+    />
 
-    <UPage id="smooth" class="pt-20 -mt-20">
+    <UPage
+      id="smooth"
+      class="pt-20 -mt-20"
+    >
       <!-- <template #left>
         <UAside>
           <UNavigationTree :links="[{ label: 'Categorías', disabled: true, children: services }, { label: 'Locations', disabled: true, children: regions }]" />
@@ -37,30 +43,25 @@ defineOgImage({
       </template> -->
 
       <UPageBody>
-      <UBlogList>
-        <UBlogPost
-          v-for="(post, index) in posts"
-          :key="index"
-          :to="post._path"
-          :title="post.title"
-          :description="post.description"
-          :image="post.image"
-          :date="new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' })"
-          :authors="post.authors"
-          :badge="post.badge"
-          :orientation="index === 0 ? 'horizontal' : 'vertical'"
-          :class="[index === 0 && 'col-span-full']"
-          :ui="{
-            description: 'line-clamp-2'
-          }"
-        />
-      </UBlogList>
-    </UPageBody>
-
+        <UBlogList>
+          <UBlogPost
+            v-for="(post, index) in posts"
+            :key="index"
+            :to="post._path"
+            :title="post.title"
+            :description="post.description"
+            :image="post.image"
+            :date="new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' })"
+            :authors="post.authors"
+            :badge="post.badge"
+            :orientation="index === 0 ? 'horizontal' : 'vertical'"
+            :class="[index === 0 && 'col-span-full']"
+            :ui="{
+              description: 'line-clamp-2'
+            }"
+          />
+        </UBlogList>
+      </UPageBody>
     </UPage>
-
-    
-
-    
   </UContainer>
 </template>

@@ -52,7 +52,7 @@ async function submitForm(state: any) {
   errors.value = []
   loading.value = true
 
-  await $fetch('http://127.0.0.1:8000/api/v1/token/login/', {
+  await $fetch('http://127.0.0.1:8000/auth/token/login/', {
     method: 'POST',
     body: JSON.stringify({
       username: state.email,

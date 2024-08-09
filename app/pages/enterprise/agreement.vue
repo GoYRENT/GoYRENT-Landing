@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { withoutTrailingSlash } from 'ufo'
+
 const route = useRoute()
 
 const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne())
@@ -12,8 +13,6 @@ const { data: surround } = await useAsyncData(`${route.path}-surround`, () => qu
   .only(['title', 'description', '_path'])
   .findSurround(withoutTrailingSlash(route.path))
 , { default: () => [] })
-
-
 
 const title = page.value.head?.title || page.value?.title
 const description = page.value?.head?.description || page.value?.description
@@ -29,11 +28,10 @@ useSeoMeta({
 defineOgImage({
   component: 'Saas',
   title: page.value.title,
-  description: page.value.description,
+  description: page.value.description
 })
 
 const headline = computed(() => findPageHeadline(page.value!))
-
 </script>
 
 <template>
@@ -50,20 +48,33 @@ const headline = computed(() => findPageHeadline(page.value!))
       </template>
        -->
 
-      <UPageHeader :title="page.title" :description="page.description" :links="page.links" :headline="headline" />
+      <UPageHeader
+        :title="page.title"
+        :description="page.description"
+        :links="page.links"
+        :headline="headline"
+      />
 
       <UPageBody prose>
-        <ContentRenderer v-if="page.body" :value="page" />
+        <ContentRenderer
+          v-if="page.body"
+          :value="page"
+        />
       </UPageBody>
 
- 
-
-      <template v-if="page.toc !== false" #right>
-        <UContentToc title="Tabla de Contenido" :links="page.body?.toc?.links" />
+      <template
+        v-if="page.toc !== false"
+        #right
+      >
+        <UContentToc
+          title="Tabla de Contenido"
+          :links="page.body?.toc?.links"
+        />
       </template>
     </UPage>
   </UContainer>
 </template>
+
 <style scoped lang="postcss">
 
 </style>

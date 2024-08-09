@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import type { FormError, FormSubmitEvent } from '#ui/types'
 
-
 const toast = useToast()
 
 const loading = ref<boolean>(false)
@@ -69,27 +68,68 @@ async function onSubmit(event: FormSubmitEvent<any>) {
   <div class="flex flex-col lg:flex-row">
     <div class="w-full">
       <UCard :ui="{ background: 'form-bg', body: { base: 'flex flex-col space-y-6 w-full', padding: 'px-4 py-5 sm:p-8' } }">
-        <UForm :validate="validate" :state="state" class="space-y-6" @submit="onSubmit">
-          <UFormGroup label="Name" name="name" required>
-            <UInput v-model="state.name" placeholder="John Doe" />
+        <UForm
+          :validate="validate"
+          :state="state"
+          class="space-y-6"
+          @submit="onSubmit"
+        >
+          <UFormGroup
+            label="Name"
+            name="name"
+            required
+          >
+            <UInput
+              v-model="state.name"
+              placeholder="John Doe"
+            />
           </UFormGroup>
 
-          <UFormGroup label="Company Email" name="email" required>
-            <UInput v-model="state.email" type="email" placeholder="you@example.com" />
+          <UFormGroup
+            label="Company Email"
+            name="email"
+            required
+          >
+            <UInput
+              v-model="state.email"
+              type="email"
+              placeholder="you@example.com"
+            />
           </UFormGroup>
 
-          <UFormGroup label="Company" name="company" required>
-            <UInput v-model="state.company" placeholder="Your company name" />
+          <UFormGroup
+            label="Company"
+            name="company"
+            required
+          >
+            <UInput
+              v-model="state.company"
+              placeholder="Your company name"
+            />
           </UFormGroup>
 
-          <UFormGroup label="What can we help you achieve?" name="body" required>
-            <UTextarea v-model="state.body" autoresize placeholder="Tell us how we can help you" :rows="6" />
+          <UFormGroup
+            label="What can we help you achieve?"
+            name="body"
+            required
+          >
+            <UTextarea
+              v-model="state.body"
+              autoresize
+              placeholder="Tell us how we can help you"
+              :rows="6"
+            />
           </UFormGroup>
 
           <!-- eslint-disable-next-line vue/no-v-html -->
           <!-- <div class="text-gray-700 dark:text-gray-400" v-html="form.info" /> -->
           <ClientOnly>
-            <NuxtTurnstile v-if="showTurnstile" ref="turnstile" v-model="token" :options="{ theme: $colorMode.value }" />
+            <NuxtTurnstile
+              v-if="showTurnstile"
+              ref="turnstile"
+              v-model="token"
+              :options="{ theme: $colorMode.value }"
+            />
           </ClientOnly>
 
           <UButton
@@ -105,17 +145,36 @@ async function onSubmit(event: FormSubmitEvent<any>) {
       </UCard>
     </div>
 
-    <UDivider label="O" color="gray" orientation="vertical" class="hidden lg:flex w-[40%] py-16" :ui="{ label: 'text-xl py-8' }" />
-    <UDivider label="O" color="gray" class="lg:hidden py-16" :ui="{ label: 'text-xl py-8' }" />
+    <UDivider
+      label="O"
+      color="gray"
+      orientation="vertical"
+      class="hidden lg:flex w-[40%] py-16"
+      :ui="{ label: 'text-xl py-8' }"
+    />
+    <UDivider
+      label="O"
+      color="gray"
+      class="lg:hidden py-16"
+      :ui="{ label: 'text-xl py-8' }"
+    />
 
     <div class="w-full flex items-start justify-center flex-col">
       <MDC
-        value="## Talk to us" class="prose dark:prose-invert"
+        value="## Talk to us"
+        class="prose dark:prose-invert"
       />
       <p>
         Book 30 minutes with us to learn more about our support solutions, present your needs and your project, and get personalized proposals to solve your issues.
       </p>
-      <UButton class="mt-8" color="gray" label="Choose a meeting" icon="i-ph-calendar-plus-duotone" to="https://calendly.com/nuxt-experts/introduction" target="_blank" />
+      <UButton
+        class="mt-8"
+        color="gray"
+        label="Choose a meeting"
+        icon="i-ph-calendar-plus-duotone"
+        to="https://calendly.com/nuxt-experts/introduction"
+        target="_blank"
+      />
     </div>
   </div>
 </template>

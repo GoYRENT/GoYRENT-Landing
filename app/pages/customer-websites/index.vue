@@ -51,7 +51,10 @@ const { copy } = useCopyToClipboard()
           >
             <template #title>
               Nuxt Image
-              <UIcon name="i-ph-medal-duotone" class="h-4 w-4 text-primary pointer-events-none" />
+              <UIcon
+                name="i-ph-medal-duotone"
+                class="h-4 w-4 text-primary pointer-events-none"
+              />
             </template>
           </UPageCard>
           <UPageCard
@@ -62,7 +65,10 @@ const { copy } = useCopyToClipboard()
           >
             <template #title>
               Nuxt Content
-              <UIcon name="i-ph-medal-duotone" class="h-4 w-4 text-primary pointer-events-none" />
+              <UIcon
+                name="i-ph-medal-duotone"
+                class="h-4 w-4 text-primary pointer-events-none"
+              />
             </template>
           </UPageCard>
           <UPageCard
@@ -72,7 +78,10 @@ const { copy } = useCopyToClipboard()
           >
             <template #title>
               Nuxt DevTools
-              <UIcon name="i-ph-medal-duotone" class="h-4 w-4 text-primary pointer-events-none" />
+              <UIcon
+                name="i-ph-medal-duotone"
+                class="h-4 w-4 text-primary pointer-events-none"
+              />
             </template>
           </UPageCard>
           <UPageCard
@@ -82,20 +91,29 @@ const { copy } = useCopyToClipboard()
           >
             <template #title>
               Nuxt UI
-              <UIcon name="i-ph-medal-duotone" class="h-4 w-4 text-primary pointer-events-none" />
+              <UIcon
+                name="i-ph-medal-duotone"
+                class="h-4 w-4 text-primary pointer-events-none"
+              />
             </template>
           </UPageCard>
         </UPageGrid>
       </div>
     </UPageHero>
 
-    <UPage id="smooth" class="pt-20 -mt-20">
+    <UPage
+      id="smooth"
+      class="pt-20 -mt-20"
+    >
       <template #left>
         <UAside>
           <UNavigationTree :links="[{ label: 'Categories', disabled: true, children: categories }]" />
 
           <template #bottom>
-            <UDivider type="dashed" class="my-6" />
+            <UDivider
+              type="dashed"
+              class="my-6"
+            />
 
             <UPageLinks :links="links" />
           </template>
@@ -182,7 +200,10 @@ const { copy } = useCopyToClipboard()
                   variant="subtle"
                   :ui="{ base: '!flex' }"
                 >
-                  <UIcon name="i-ph-medal-duotone" class="w-4 h-4" />
+                  <UIcon
+                    name="i-ph-medal-duotone"
+                    class="w-4 h-4"
+                  />
                   <span>Official</span>
                 </UBadge>
 
@@ -194,7 +215,10 @@ const { copy } = useCopyToClipboard()
                   color="pink"
                   :ui="{ base: '!flex' }"
                 >
-                  <UIcon name="i-ph-hand-heart-duotone" class="w-4 h-4" />
+                  <UIcon
+                    name="i-ph-hand-heart-duotone"
+                    class="w-4 h-4"
+                  />
                   <span>Sponsor</span>
                 </UBadge>
               </div>
@@ -227,7 +251,10 @@ const { copy } = useCopyToClipboard()
                       target="_blank"
                       :class="[selectedSort.key === 'downloads' && 'text-gray-900 dark:text-white']"
                     >
-                      <UIcon name="i-ph-arrow-circle-down-duotone" class="w-5 h-5 flex-shrink-0" />
+                      <UIcon
+                        name="i-ph-arrow-circle-down-duotone"
+                        class="w-5 h-5 flex-shrink-0"
+                      />
                       <span class="text-sm font-medium">{{ formatNumber(module.stats.downloads) }}</span>
                     </NuxtLink>
                   </UTooltip>
@@ -239,7 +266,10 @@ const { copy } = useCopyToClipboard()
                       target="_blank"
                       :class="[selectedSort.key === 'stars' && 'text-gray-900 dark:text-white']"
                     >
-                      <UIcon name="i-ph-star-duotone" class="w-5 h-5 flex-shrink-0" />
+                      <UIcon
+                        name="i-ph-star-duotone"
+                        class="w-5 h-5 flex-shrink-0"
+                      />
                       <span class="text-sm font-medium">{{ formatNumber(module.stats.stars || 0) }}</span>
                     </NuxtLink>
                   </UTooltip>
@@ -251,7 +281,10 @@ const { copy } = useCopyToClipboard()
                     :to="`https://github.com/${module.repo}/graphs/contributors`"
                     target="_blank"
                   >
-                    <UIcon name="i-ph-user-circle-gear-duotone" class="w-5 h-5 flex-shrink-0" />
+                    <UIcon
+                      name="i-ph-user-circle-gear-duotone"
+                      class="w-5 h-5 flex-shrink-0"
+                    />
                     <span class="text-sm font-medium">{{ module.contributors.length }}</span>
                   </NuxtLink>
                 </UTooltip>
@@ -260,7 +293,10 @@ const { copy } = useCopyToClipboard()
           </UPageCard>
         </UPageGrid>
 
-        <EmptyCard v-else :label="`There is no module found for <b>${q}</b> yet. Become the first one to create it!`">
+        <EmptyCard
+          v-else
+          :label="`There is no module found for <b>${q}</b> yet. Become the first one to create it!`"
+        >
           <UButton
             label="Contribute on GitHub"
             color="black"
@@ -269,7 +305,12 @@ const { copy } = useCopyToClipboard()
             size="md"
             @click="$router.replace({ query: {} })"
           />
-          <UButton to="/docs/guide/going-further/modules" color="white" size="md" label="How to create a module?" />
+          <UButton
+            to="/docs/guide/going-further/modules"
+            color="white"
+            size="md"
+            label="How to create a module?"
+          />
         </EmptyCard>
       </UPageBody>
     </UPage>
