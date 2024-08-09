@@ -1,7 +1,9 @@
-navigation.title: Modules
-title: Nuxt Modules
+navigation.title: Sitios de clientes - GOYRENT
+navigation.icon: i-ph-storefront-duotone
+
+title: Sitios de clientes
 description: Discover our list of modules to supercharge your Nuxt project. Created by the Nuxt team and community.
-navigation.icon: i-ph-puzzle-piece-duotone
+
 links:
   - label: 'Module Author Guide'
     icon: i-ph-book-open-duotone

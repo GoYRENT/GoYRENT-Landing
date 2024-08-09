@@ -1,6 +1,6 @@
 title: Precios
 description: Elija el plan adecuado para usted. Empieza gratis, decide después.
-navigation.icon: i-heroicons-credit-card
+navigation.icon: i-ph-credit-card-duotone
 hero:
   title: Un plan para cada necesidad
   description: Nuestros planes están diseñados para satisfacer los requisitos tanto de principiantes como de jugadores. Obtenga el plan adecuado que más le convenga.
@@ -10,7 +10,7 @@ plans:
     description: Todo lo esencial para iniciar negocios de alquiler y pequeños equipos.
     price:
       month: $2219
-      year: $26 628 
+      year: $26 628
       discount: $21 302.4
     align: top
     button:
@@ -25,12 +25,12 @@ plans:
       - 1 Database
       - 1 SSL Certificate
       - 1 Support Ticket
-  - title: Avanzado 
+  - title: Avanzado
     description: El mejor valor para las empresas de alquiler de tamaño medio y en crecimiento.
     badge: Más popular
     price:
       month: $3945
-      year: $47 340 
+      year: $47 340
       discount: $37 872
     scale: true
     highlight: true
@@ -50,7 +50,7 @@ plans:
     description: Funciones avanzadas para grandes empresas y organizaciones de alquiler.
     price:
       month: $5549
-      year: $66 588 
+      year: $66 588
       discount: $53 270.4
     align: top
     button:
@@ -95,7 +95,7 @@ faq:
     - label: ¿Qué son las cuentas de personal?
       content: Puedes añadir cuentas de personal a Goyrent para que los miembros de tu equipo se conecten como usuarios independientes. Tu plan determina el número de cuentas de personal que puedes crear.
 cta:
-  title: Pruebe GOYRENT gratis 
+  title: Pruebe GOYRENT gratis
   description: Inicie su prueba gratuita de 15 días, sin hacer ninguna transferencia.
   links:
     - label: Probar gratis ahora
@@ -107,3 +107,43 @@ cta:
       trailingIcon: 'i-heroicons-arrow-right-20-solid'
       color: gray
       to: /pricing
+
+
+feature_plans:
+  - label: Funciones principales
+    items:
+      - name: "Panel con acciones rápidas"
+        basic: true
+        pro: true
+        premium: false
+      - nombre: "Creación de pedidos"
+        basic: true
+        pro: true
+        premium: true
+      - name: "Panel con acciones rápidas"
+        basic: true
+        pro: true
+        premium: false
+      - nombre: "Creación de pedidos"
+        basic: true
+        pro: true
+        premium: true
+  - label: Funciones secundarias
+    items:
+      - name: "Panel con acciones rápidas"
+        basic: true
+        pro: true
+        premium: false
+      - nombre: "Creación de pedidos"
+        basic: true
+        pro: true
+        premium: true
+      - name: "Panel con acciones rápidas"
+        basic: true
+        pro: true
+        premium: false
+      - nombre: "Creación de pedidos"
+        basic: true
+        pro: true
+        premium: true
+

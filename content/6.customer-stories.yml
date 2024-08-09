@@ -1,7 +1,7 @@
 title: Historias de clientes
 head.title: Nuxt Showcase
 description: Entérate de las diferentes historias inspiradoras.
-navigation.icon: i-ph-projector-screen-duotone
+navigation.icon: i-ph-book-open-duotone
 links:
   - label: 'Chrome'
     size: 'md'

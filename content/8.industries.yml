@@ -1,10 +1,13 @@
+head.title: Nuxt Showcase
 title: Industrias-GOYRENT
 description: Nuxt UI Pro is a collection of premium Vue components built on top of Nuxt UI to create beautiful & responsive Nuxt applications in minutes.
-navigation: false
+navigation.icon: i-ph-buildings-duotone
+
+
 hero:
   title: 'Alquileres sostenibles para un mercado en <br><span class="bg-gradient-to-r bg-clip-text text-transparent font-bold from-orange-500 from-10% via-violet-500 via- to-blue-500 to-80%"> crecimiento</span> '
-  description: El tamaño del mercado mundial de alquiler de productos para fiestas fue de +2k millones de dólares en 2022 y alcanzará +5k millones de dólares en 2029  
-  align: left    
+  description: El tamaño del mercado mundial de alquiler de productos para fiestas fue de +2k millones de dólares en 2022 y alcanzará +5k millones de dólares en 2029
+  align: left
   links:
     - label: Probar gratis
       to: '/signup'
@@ -73,7 +76,7 @@ industries:
       color: gray
       to: https://github.com/nuxt-ui-pro/saas
       target: _blank
-  - title: Ponte al día con la industria del alquiler de 
+  - title: Ponte al día con la industria del alquiler de
     description: Diseñado para permite administrar de manera eficiente y rentable tu negocio de alquiler de bicicletas, optimizando tus operaciones, aumentando los ingresos y brindando una experiencia excepcional a tus clientes.
     image: 'industries/pexels-yaw-afari-188361668-12005675.jpg'
     align: left
@@ -129,7 +132,7 @@ sections:
         description: Reprehenderit fugiat elit in do ipsum ut pariatur.
         icon: i-heroicons-document-duplicate
       - name: Estadísticas
-        description: Controla y monitorea los días con beneficios 
+        description: Controla y monitorea los días con beneficios
         icon: i-heroicons-chart-bar
       - name: Aumento el potencial de los ingresos
         description: La optimización de los precios y la reducción del tiempo de inactividad y de las oportunidades de venta pueden aumentar significativamente los ingresos.
@@ -166,7 +169,7 @@ features:
       icon: i-heroicons-chart-bar
 testimonials:
   headline: Testimonios
-  title: Lo que dicen sobre GoYRENT 
+  title: Lo que dicen sobre GoYRENT
   description: Lee sobre las experiencias de nuestros clientes y sus casos de éxito
   items:
     - quote: Nostrud tempor sunt fugiat. Dolor in sint dolore labore non occaecat adipisicing Lorem labore ullamco enim excepteur. In fugiat Lorem sit velit id veniam esse eiusmod non ea voluptate cupidatat reprehenderit ullamco dolore. Mollit laborum occaecat aliquip.
