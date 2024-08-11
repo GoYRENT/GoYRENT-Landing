@@ -1,29 +1,41 @@
-<template>
-  <Alert>
-    <Icon class="inline-block w-5 h-5" name="heroicons-outline:information-circle" />
-    Read more in
-    <NuxtLink :to="link">
-      {{ computedTitle }}
-    </NuxtLink>.
-  </Alert>
-</template>
-
 <script setup lang="ts">
 import { splitByCase, upperFirst } from 'scule'
 
 const props = defineProps({
-  link: {
+  to: {
     type: String,
     required: true
   },
   title: {
     type: String,
     required: false,
-    default: undefined
+    default: ''
   }
 })
 
-const createTitle = (title, link) => (title || link.split('/').filter(Boolean).map(part => splitByCase(part).map(p => upperFirst(p)).join(' ')).join(' > ').replace('Api', 'API'))
+const createBreadcrumb = (link: string = 'Missing link') => {
+  if (link.startsWith('http')) {
+    return link
+  }
+  return link
+    .split('/')
+    .filter(Boolean)
+    .map(part =>
+      splitByCase(part)
+        .map(p => upperFirst(p))
+        .join(' ')
+    )
+    .join(' > ')
+    .replace('Api', 'API')
+}
 
-const computedTitle = computed(() => createTitle(props.title, props.link))
+const computedTitle = computed<string>(() => props.title || createBreadcrumb(props.to))
 </script>
+
+<template>
+  <Callout icon="i-ph-bookmark-simple-duotone" :to="to">
+    <MDCSlot unwrap="p">
+      Read more in <span class="font-bold" v-html="computedTitle" />.
+    </MDCSlot>
+  </Callout>
+</template>

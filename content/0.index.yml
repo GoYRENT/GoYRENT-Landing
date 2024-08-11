@@ -24,7 +24,7 @@ hero:
       to: https://github.com/nuxt-ui-pro/saas
       target: _blank
 sections:
-  - title: El <span class="text-gradient bg-gradient-to-r bg-clip-text text-transparent font-bold from-orange-500 from-10% via-violet-500 via- to-blue-500 to-80%"> poder </span> de nuestro servicio 
+  - title: El <span class="text-gradient bg-gradient-to-r bg-clip-text text-transparent font-bold from-orange-500 from-10% via-violet-500 via- to-blue-500 to-80%"> poder </span> de nuestro servicio
     description: Simplifique sus flujos de trabajo diarios con un software de gestión de alquileres que le ayuda
     id: features
     image: 'features/GoYRENT.jpeg'
@@ -102,7 +102,7 @@ features:
       icon: i-fluent-handshake-16-regular
 testimonials:
   headline: Testimonios
-  title: Lo que dicen sobre GoYRENT 
+  title: Lo que dicen sobre GoYRENT
   description: Estas son alugas de las experiencias de nuestros clientes y sus casos de éxito
   items:
     - quote: Nostrud tempor sunt fugiat. Dolor in sint dolore labore non occaecat adipisicing Lorem labore ullamco enim excepteur. In fugiat Lorem sit velit id veniam esse eiusmod non ea voluptate cupidatat reprehenderit ullamco dolore. Mollit laborum occaecat aliquip.
