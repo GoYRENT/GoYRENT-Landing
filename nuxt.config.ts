@@ -1,19 +1,23 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  extends: ['@nuxt/ui-pro'],
-
   modules: [
     '@nuxt/content',
     '@nuxt/eslint',
     '@nuxt/fonts',
     '@nuxt/image',
     '@nuxt/ui',
-    '@nuxthq/studio',
     '@vueuse/nuxt',
     'nuxt-og-image',
     '@pinia/nuxt',
-    'shadcn-nuxt'
+    'shadcn-nuxt',
+    '@nuxtjs/turnstile'
   ],
+
+  turnstile: {
+    siteKey: process.env.NUXT_TURNSTILE_SITE_KEY || '1x00000000000000000000AA'
+  },
+
+  css: ['~/assets/css/main.css'],
 
   hooks: {
     // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
@@ -25,7 +29,7 @@ export default defineNuxtConfig({
   },
 
   ui: {
-    icons: ['heroicons', 'simple-icons', 'fluent', 'ph']
+    // icons handled via @nuxt/icon, collections auto-detected
   },
 
   colorMode: {
@@ -44,10 +48,16 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    // Temporary workaround for prerender regression. see https://github.com/nuxt/nuxt/issues/27490
-    '/': { prerender: true },
-    '/api/search.json': { prerender: true },
+    '/': { prerender: false },
+    '/api/search.json': { prerender: false },
     '/docs': { redirect: '/docs/getting-started', prerender: false }
+  },
+
+  nitro: {
+    prerender: {
+      failOnError: false,
+      crawlLinks: false
+    }
   },
 
   // server: {
@@ -75,5 +85,5 @@ export default defineNuxtConfig({
     }
   },
 
-  compatibilityDate: '2024-07-11'
+  compatibilityDate: '2025-07-15'
 })

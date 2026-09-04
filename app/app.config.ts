@@ -1,41 +1,25 @@
 export default defineAppConfig({
   ui: {
-    primary: 'blue',
-    gray: 'zinc',
-    variables: {
-      light: {
-        background: 'var(--color-gray-50)'
-      },
-      dark: {
-        background: 'var(--color-gray-950)'
-      }
+    colors: {
+      primary: 'blue',
+      neutral: 'zinc'
     },
     button: {
-      rounded: 'rounded-full',
-      default: {
+      slots: {
+        base: 'rounded-full'
+      },
+      defaultVariants: {
         size: 'md'
       }
     },
     input: {
-      default: {
+      defaultVariants: {
         size: 'md'
       }
     },
     card: {
-      rounded: 'rounded-xl'
-    },
-    footer: {
-      top: {
-        wrapper: 'border-t border-gray-200 dark:border-gray-800',
-        container: 'py-8 lg:py-16'
-      },
-      bottom: {
-        wrapper: 'border-t border-gray-200 dark:border-gray-800'
-      }
-    },
-    page: {
-      hero: {
-        wrapper: 'lg:py-24'
+      slots: {
+        root: 'rounded-xl'
       }
     }
   }

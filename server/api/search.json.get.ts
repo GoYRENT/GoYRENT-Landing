@@ -1,5 +1,5 @@
-import { serverQueryContent } from '#content/server'
+import { queryCollection } from '@nuxt/content/server'
 
 export default eventHandler(async (event) => {
-  return serverQueryContent(event).where({ _type: 'markdown', navigation: { $ne: false } }).find()
+  return queryCollection(event, 'content').where('navigation', '<>', false).all()
 })
