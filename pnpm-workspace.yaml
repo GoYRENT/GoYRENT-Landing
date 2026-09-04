@@ -1,0 +1,17 @@
+# pnpm workspace config — centralizes settings previously in package.json#pnpm and .npmrc (pnpm 10+ only reads auth/registry from .npmrc)
+# See https://pnpm.io/settings
+
+packages:
+  - '.'
+
+# Keep esbuild override here as well for pnpm-native resolution.
+# Duplicated with package.json#overrides (npm-compatible) — both are respected, ensures no warning regardless of resolution path.
+overrides:
+  esbuild: ^0.28.2
+
+# Migrate .npmrc shamefully-hoist and dangerouslyAllowAllBuilds to workspace config (pnpm 10+)
+shamefullyHoist: true
+dangerouslyAllowAllBuilds: true
+# Explicit public hoist pattern matches shamefullyHoist behavior; ensures .modules.yaml publicHoistPattern diff is resolved consistently
+publicHoistPattern:
+  - '*'
