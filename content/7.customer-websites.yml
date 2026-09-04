@@ -8,11 +8,12 @@ links:
   - label: 'Module Author Guide'
     icon: i-ph-book-open-duotone
     to: '/docs/guide/going-further/modules'
-    color: black
+    color: primary
     size: md
   - label: 'List a module'
     icon: 'i-ph-plus-circle-duotone'
     to: 'https://github.com/nuxt/modules#addupdate-a-module'
     target: '_blank'
-    color: gray
+    color: neutral
+    variant: ghost
     size: md

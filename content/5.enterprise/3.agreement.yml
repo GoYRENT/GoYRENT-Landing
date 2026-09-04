@@ -12,12 +12,13 @@ cta:
   links:
     - label: Probar gratis ahora
       size: xl
-      color: black
+      color: primary
       to: /pricing
     - label: Ver demostración
       size: xl
       trailingIcon: 'i-heroicons-arrow-right-20-solid'
-      color: gray
+      color: neutral
+      variant: ghost
       to: /pricing
 mdc: Este documento contiene los términos y condiciones generales aplicables al uso del servicio GOYRENT, prestado por Salad Days B.V., con sede en Blokhuisplein 40, 8911 LJ en Leeuwarden, Países Bajos, e inscrita en la Cámara de Comercio de KVK Países Bajos con el número de registro 52866297 (en adelante, «Booqable»).
     # 1. Disposiciones introductorias

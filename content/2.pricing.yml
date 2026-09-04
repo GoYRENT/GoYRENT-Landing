@@ -9,13 +9,14 @@ plans:
   - title: Básico
     description: Todo lo esencial para iniciar negocios de alquiler y pequeños equipos.
     price:
-      month: $2219
-      year: $26 628
-      discount: $21 302.4
+      month: "$2219"
+      year: "$26 628"
+      discount: "$21 302.4"
     align: top
     button:
       label: Probar gratis este plan
-      color: white
+      color: neutral
+      variant: outline
     features:
       - Incluye 2 cuentas de personal
       - Pedidos ilimitados
@@ -29,15 +30,15 @@ plans:
     description: El mejor valor para las empresas de alquiler de tamaño medio y en crecimiento.
     badge: Más popular
     price:
-      month: $3945
-      year: $47 340
-      discount: $37 872
+      month: "$3945"
+      year: "$47 340"
+      discount: "$37 872"
     scale: true
     highlight: true
     align: top
     button:
       label: Probar gratis
-      color: black
+      color: primary
     features:
       - Incluye 5 cuentas de personal
       - Productos y pedidos ilimitados
@@ -49,13 +50,14 @@ plans:
   - title: Premium
     description: Funciones avanzadas para grandes empresas y organizaciones de alquiler.
     price:
-      month: $5549
-      year: $66 588
-      discount: $53 270.4
+      month: "$5549"
+      year: "$66 588"
+      discount: "$53 270.4"
     align: top
     button:
       label: Probar gratis este plan
-      color: white
+      color: neutral
+      variant: outline
     features:
       - Incluye 15 cuentas de personal
       - Productos y pedidos ilimitados
@@ -100,12 +102,13 @@ cta:
   links:
     - label: Probar gratis ahora
       size: xl
-      color: black
+      color: primary
       to: /pricing
     - label: Ver demostración
       size: xl
       trailingIcon: 'i-heroicons-arrow-right-20-solid'
-      color: gray
+      color: neutral
+      variant: ghost
       to: /pricing
 
 

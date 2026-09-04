@@ -11,7 +11,7 @@ hero:
     - label: Explorar expertos
       to: '#experts'
       size: xl
-      color: black
+      color: primary
       icon: i-heroicons-arrow-right-20-solid
       trailing: true
 sections:
@@ -32,7 +32,8 @@ sections:
     links:
       - label: Explore components
         to: /pro/components
-        color: gray
+        color: neutral
+        variant: ghost
         icon: i-heroicons-arrow-right-20-solid
         trailing: true
         size: md
@@ -50,7 +51,8 @@ sections:
     links:
       - label: Learn more
         to: /pro/guide/content
-        color: gray
+        color: neutral
+        variant: ghost
         icon: i-heroicons-arrow-right-20-solid
         trailing: true
         size: md
@@ -107,10 +109,11 @@ cta:
   links:
     - label: Probar gratis ahora
       size: xl
-      color: black
+      color: primary
       to: /pricing
     - label: Ver demostración
       size: xl
       trailingIcon: 'i-heroicons-arrow-right-20-solid'
-      color: gray
+      color: neutral
+      variant: ghost
       to: /pricing

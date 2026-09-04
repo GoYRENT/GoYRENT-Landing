@@ -5,19 +5,22 @@ navigation.icon: i-ph-book-open-duotone
 links:
   - label: 'Chrome'
     size: 'md'
-    color: 'gray'
+    color: neutral
+    variant: ghost
     to: 'https://chrome.google.com/webstore/detail/vue-telescope/neaebjphlfplgdhedjdhcnpjkndddbpd'
     icon: 'i-logos-chrome'
     target: '_blank'
   - label: 'Firefox'
     size: 'md'
-    color: 'gray'
+    color: neutral
+    variant: ghost
     to: 'https://addons.mozilla.org/en/firefox/addon/vue-telescope/'
     icon: 'i-logos-firefox'
     target: '_blank'
   - label: 'Edge'
     size: 'md'
-    color: 'gray'
+    color: neutral
+    variant: ghost
     to: 'https://microsoftedge.microsoft.com/addons/detail/vue-telescope/icgcillpgelpleniodgkmohgdmeogodl'
     icon: 'i-logos-microsoft-edge'
     target: '_blank'

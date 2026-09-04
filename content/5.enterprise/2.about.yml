@@ -50,10 +50,11 @@ cta:
   links:
     - label: Probar gratis ahora
       size: xl
-      color: black
+      color: primary
       to: /pricing
     - label: Ver demostración
       size: xl
       trailingIcon: 'i-heroicons-arrow-right-20-solid'
-      color: gray
+      color: neutral
+      variant: ghost
       to: /pricing

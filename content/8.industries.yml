@@ -12,13 +12,14 @@ hero:
     - label: Probar gratis
       to: '/signup'
       size: xl
-      color: black
+      color: primary
       icon: i-heroicons-arrow-right-20-solid
       trailing: true
     - label: Use this template
       icon: i-simple-icons-github
       size: xl
-      color: gray
+      color: neutral
+      variant: ghost
       to: https://github.com/nuxt-ui-pro/saas
       target: _blank
 industries:
@@ -31,13 +32,14 @@ industries:
     - label: Probar gratis
       to: '/signup'
       size: xl
-      color: black
+      color: primary
       icon: i-heroicons-arrow-right-20-solid
       trailing: true
     - label: ver
       icon: i-simple-icons-github
       size: xl
-      color: gray
+      color: neutral
+      variant: ghost
       to: https://github.com/nuxt-ui-pro/saas
       target: _blank
   - title: Potencie su negocio de alquiler de carros con funciones de última generación
@@ -49,13 +51,14 @@ industries:
     - label: Probar gratis
       to: '/signup'
       size: xl
-      color: black
+      color: primary
       icon: i-heroicons-arrow-right-20-solid
       trailing: true
     - label: ver
       icon: i-simple-icons-github
       size: xl
-      color: gray
+      color: neutral
+      variant: ghost
       to: https://github.com/nuxt-ui-pro/saas
       target: _blank
   - title: Transforma tu negocio de bicicletas con la solución integral de gestión de alquileres
@@ -67,13 +70,14 @@ industries:
     - label: Probar gratis
       to: '/signup'
       size: xl
-      color: black
+      color: primary
       icon: i-heroicons-arrow-right-20-solid
       trailing: true
     - label: Use this template
       icon: i-simple-icons-github
       size: xl
-      color: gray
+      color: neutral
+      variant: ghost
       to: https://github.com/nuxt-ui-pro/saas
       target: _blank
   - title: Ponte al día con la industria del alquiler de
@@ -84,13 +88,14 @@ industries:
     - label: Probar gratis
       to: '/signup'
       size: xl
-      color: black
+      color: primary
       icon: i-heroicons-arrow-right-20-solid
       trailing: true
     - label: Use this template
       icon: i-simple-icons-github
       size: xl
-      color: gray
+      color: neutral
+      variant: ghost
       to: https://github.com/nuxt-ui-pro/saas
       target: _blank
 
@@ -114,7 +119,8 @@ sections:
     links:
       - label: Explore components
         to: /pro/components
-        color: gray
+        color: neutral
+        variant: ghost
         icon: i-heroicons-arrow-right-20-solid
         trailing: true
         size: md
@@ -140,7 +146,8 @@ sections:
     links:
       - label: Learn more
         to: /pro/guide/content
-        color: gray
+        color: neutral
+        variant: ghost
         icon: i-heroicons-arrow-right-20-solid
         trailing: true
         size: md
@@ -220,9 +227,10 @@ cta:
   links:
     - label: Probar gratis ahora
       size: xl
-      color: black
+      color: primary
       to: /pricing
     - label: Enviar mensaje
       size: xl
-      color: gray
+      color: neutral
+      variant: ghost
       to: /enterprise/support
