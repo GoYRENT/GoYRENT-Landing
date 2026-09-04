@@ -190,7 +190,7 @@ const description = computed(() => (props.description || '').slice(0, 200))
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(167.875 167.875) rotate(-90) scale(100.596 107.502)"
         >
-          <stop stop-color="white" />
+          <stop stop-color="neutral" />
           <stop
             offset="1"
             stop-opacity="0"
@@ -204,7 +204,7 @@ const description = computed(() => (props.description || '').slice(0, 200))
           y2="229.234"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" />
+          <stop stop-color="neutral" />
           <stop
             offset="1"
             stop-opacity="0"
@@ -264,7 +264,7 @@ const description = computed(() => (props.description || '').slice(0, 200))
           y2="184.293"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" />
+          <stop stop-color="neutral" />
           <stop
             offset="1"
             stop-opacity="0"
@@ -278,7 +278,7 @@ const description = computed(() => (props.description || '').slice(0, 200))
           y2="184.293"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" />
+          <stop stop-color="neutral" />
           <stop
             offset="1"
             stop-opacity="0"

@@ -50,11 +50,11 @@ async function onSubmit(event: FormSubmitEvent<any>) {
       state.email = ''
       state.body = ''
       showTurnstile.value = false
-      toast.add({ title: 'Email sent', description: 'We will do everything possible to respond to you as quickly as possible', color: 'green' })
+      toast.add({ title: 'Email sent', description: 'We will do everything possible to respond to you as quickly as possible', color: 'success' })
     })
     .catch((e) => {
       const description = e.data?.message || 'Something went wrong. Please try again later.'
-      toast.add({ title: 'Email sending failed', description, color: 'red' })
+      toast.add({ title: 'Email sending failed', description, color: 'error' })
     })
     .finally(() => {
       loading.value = false
@@ -67,14 +67,14 @@ async function onSubmit(event: FormSubmitEvent<any>) {
 <template>
   <div class="flex flex-col lg:flex-row">
     <div class="w-full">
-      <UCard :ui="{ background: 'form-bg', body: { base: 'flex flex-col space-y-6 w-full', padding: 'px-4 py-5 sm:p-8' } }">
+      <UCard :ui="{ root: 'form-bg', body: 'flex flex-col space-y-6 w-full px-4 py-5 sm:p-8' }">
         <UForm
           :validate="validate"
           :state="state"
           class="space-y-6"
           @submit="onSubmit"
         >
-          <UFormGroup
+          <UFormField
             label="Name"
             name="name"
             required
@@ -83,9 +83,9 @@ async function onSubmit(event: FormSubmitEvent<any>) {
               v-model="state.name"
               placeholder="John Doe"
             />
-          </UFormGroup>
+          </UFormField>
 
-          <UFormGroup
+          <UFormField
             label="Company Email"
             name="email"
             required
@@ -95,9 +95,9 @@ async function onSubmit(event: FormSubmitEvent<any>) {
               type="email"
               placeholder="you@example.com"
             />
-          </UFormGroup>
+          </UFormField>
 
-          <UFormGroup
+          <UFormField
             label="Company"
             name="company"
             required
@@ -106,9 +106,9 @@ async function onSubmit(event: FormSubmitEvent<any>) {
               v-model="state.company"
               placeholder="Your company name"
             />
-          </UFormGroup>
+          </UFormField>
 
-          <UFormGroup
+          <UFormField
             label="What can we help you achieve?"
             name="body"
             required
@@ -119,7 +119,7 @@ async function onSubmit(event: FormSubmitEvent<any>) {
               placeholder="Tell us how we can help you"
               :rows="6"
             />
-          </UFormGroup>
+          </UFormField>
 
           <!-- eslint-disable-next-line vue/no-v-html -->
           <!-- <div class="text-gray-700 dark:text-gray-400" v-html="form.info" /> -->
@@ -136,7 +136,7 @@ async function onSubmit(event: FormSubmitEvent<any>) {
             label="Send message"
             icon="i-ph-paper-plane-right-duotone"
             type="submit"
-            color="gray"
+            color="neutral"
             class="w-fit pt-2"
             :loading="loading"
             :disabled="!canSend"
@@ -145,31 +145,28 @@ async function onSubmit(event: FormSubmitEvent<any>) {
       </UCard>
     </div>
 
-    <UDivider
+    <USeparator
       label="O"
-      color="gray"
+      color="neutral"
       orientation="vertical"
       class="hidden lg:flex w-[40%] py-16"
       :ui="{ label: 'text-xl py-8' }"
     />
-    <UDivider
+    <USeparator
       label="O"
-      color="gray"
+      color="neutral"
       class="lg:hidden py-16"
       :ui="{ label: 'text-xl py-8' }"
     />
 
     <div class="w-full flex items-start justify-center flex-col">
-      <MDC
-        value="## Talk to us"
-        class="prose dark:prose-invert"
-      />
+      <h2 class="text-2xl font-bold mb-2">Talk to us</h2>
       <p>
         Book 30 minutes with us to learn more about our support solutions, present your needs and your project, and get personalized proposals to solve your issues.
       </p>
       <UButton
         class="mt-8"
-        color="gray"
+        color="neutral"
         label="Choose a meeting"
         icon="i-ph-calendar-plus-duotone"
         to="https://calendly.com/nuxt-experts/introduction"

@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { NavItem } from '@nuxt/content'
+import type { ContentNavigationItem } from '@nuxt/content'
 
 const userStore = useUserStore()
 function logout() {
   userStore.removeToken()
 }
 
-const navigation = inject<Ref<NavItem[]>>('navigation', ref([]))
+const navigation = inject<Ref<ContentNavigationItem[]>>('navigation', ref([]))
 
 const links = [{
   label: 'Industrias',
@@ -63,8 +63,8 @@ const links = [{
 </script>
 
 <template>
-  <UHeader :links="links">
-    <template #logo>
+  <UHeader>
+    <template #title>
       GoYRENT <UBadge
         label="PRO"
         variant="subtle"
@@ -72,18 +72,28 @@ const links = [{
       />
     </template>
 
+    <UNavigationMenu
+      :items="links"
+      variant="link"
+      class="hidden lg:flex"
+    />
+
     <template #right>
+      <UColorModeButton />
+      <UContentSearchButton />
+
       <template v-if="userStore.user.isAuthenticated">
         <UButton
           label="Abrir aplicación"
-          color="black"
+          color="primary"
+          variant="solid"
           to="/login"
-          :ui="{ rounded: 'rounded-full' }"
         />
 
         <UButton
           label="Cerrar sesión"
-          color="gray"
+          color="neutral"
+          variant="ghost"
           @click="logout"
         />
       </template>
@@ -91,24 +101,32 @@ const links = [{
       <template v-else>
         <UButton
           label="Iniciar sesión"
-          color="gray"
+          color="neutral"
+          variant="ghost"
           to="/login"
         />
         <UButton
           label="Probar gratis"
           icon="i-heroicons-arrow-right-20-solid"
           trailing
-          color="black"
+          color="primary"
+          variant="solid"
           to="/pricing"
           class="hidden lg:flex"
         />
-        <!-- <UButton label="Sign up" icon="i-heroicons-arrow-right-20-solid" trailing color="black" to="/signup" class="hidden lg:flex" /> -->
+        <!-- <UButton label="Sign up" icon="i-heroicons-arrow-right-20-solid" trailing color="neutral" to="/signup" class="hidden lg:flex" /> -->
       </template>
     </template>
 
-    <template #panel>
-      <UNavigationTree
-        :links="mapContentNavigation(navigation)"
+    <template #body>
+      <UNavigationMenu
+        :items="links"
+        orientation="vertical"
+        class="-mx-2.5"
+      />
+      <USeparator class="my-4" />
+      <UContentNavigation
+        :navigation="navigation"
         default-open
       />
     </template>

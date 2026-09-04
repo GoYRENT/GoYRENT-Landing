@@ -65,7 +65,7 @@
       :to="to"
       label="Visitar sitio web"
       size="lg"
-      color="black"
+      color="neutral"
       target="_blank"
       block
     />
@@ -73,14 +73,19 @@
 </template>
 
 <script lang="ts" setup>
-import { nuxtLinkProps, getNuxtLinkProps } from '#ui/utils'
-
 defineOptions({
   inheritAttrs: false
 })
 
 const props = defineProps({
-  ...nuxtLinkProps,
+  to: {
+    type: String,
+    default: undefined
+  },
+  target: {
+    type: String,
+    default: undefined
+  },
   name: {
     type: String,
     default: undefined

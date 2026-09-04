@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const links = [{
+const columns = [{
   label: 'Resources',
   children: [{
     label: 'Centro de ayuda',
@@ -17,13 +17,17 @@ const links = [{
 }, {
   label: 'Features',
   children: [{
-    label: 'Affiliates'
+    label: 'Affiliates',
+    to: '#'
   }, {
-    label: 'Portal'
+    label: 'Portal',
+    to: '#'
   }, {
-    label: 'Expertos de GOYRENT'
+    label: 'Expertos de GOYRENT',
+    to: '/enterprise/experts'
   }, {
-    label: 'Sponsors'
+    label: 'Sponsors',
+    to: '#'
   }]
 }, {
   label: 'Empresa',
@@ -43,7 +47,7 @@ const links = [{
     to: '/enterprise/agreement'
   }, {
     label: 'Política de privacidad',
-    to: '/privacy-policy'
+    to: '/enterprise/privacy-policy'
   }]
 }]
 
@@ -67,44 +71,47 @@ function onSubmit() {
 </script>
 
 <template>
-  <UFooter>
+  <UFooter :ui="{ top: 'border-t border-default' }">
     <template #top>
-      <UFooterColumns :links="links">
-        <template #right>
-          <form @submit.prevent="onSubmit">
-            <UFormGroup
-              label="Subscribe to our newsletter"
-              :ui="{ container: 'mt-3' }"
-            >
-              <UInput
-                v-model="email"
-                type="email"
-                placeholder="Enter your email"
-                :ui="{ icon: { trailing: { pointer: '' } } }"
-                required
-                size="xl"
-                autocomplete="off"
-                class="max-w-sm"
-                input-class="rounded-full"
+      <UContainer>
+        <UFooterColumns :columns="columns">
+          <template #right>
+            <form @submit.prevent="onSubmit">
+              <UFormField
+                name="email"
+                label="Subscribe to our newsletter"
+                :ui="{ container: 'mt-3' }"
               >
-                <template #trailing>
-                  <UButton
-                    type="submit"
-                    size="xs"
-                    color="primary"
-                    :label="loading ? 'Subscribing' : 'Subscribe'"
-                    :loading="loading"
-                  />
-                </template>
-              </UInput>
-            </UFormGroup>
-          </form>
-        </template>
-      </UFooterColumns>
+                <UInput
+                  v-model="email"
+                  type="email"
+                  placeholder="Enter your email"
+                  required
+                  size="xl"
+                  autocomplete="off"
+                  class="max-w-sm"
+                  :ui="{ base: 'rounded-full' }"
+                >
+                  <template #trailing>
+                    <UButton
+                      type="submit"
+                      size="xs"
+                      color="primary"
+                      variant="solid"
+                      :label="loading ? 'Subscribing' : 'Subscribe'"
+                      :loading="loading"
+                    />
+                  </template>
+                </UInput>
+              </UFormField>
+            </form>
+          </template>
+        </UFooterColumns>
+      </UContainer>
     </template>
 
     <template #left>
-      <p class="text-gray-500 dark:text-gray-400 text-sm">
+      <p class="text-muted text-sm">
         Copyright © {{ new Date().getFullYear() }}. All rights reserved.
       </p>
     </template>
@@ -117,7 +124,7 @@ function onSubmit() {
         target="_blank"
         icon="i-simple-icons-github"
         aria-label="GitHub"
-        color="gray"
+        color="neutral"
         variant="ghost"
       />
     </template>
