@@ -1,23 +1,23 @@
 <script setup lang="ts">
-import { withoutTrailingSlash, joinURL } from 'ufo'
+import { withoutTrailingSlash } from 'ufo'
 import type { BlogPost } from '~/types'
 
 const route = useRoute()
+const routePath = computed(() => withoutTrailingSlash(route.path))
 
-const { data: post } = await useAsyncData(route.path, () => queryContent<BlogPost>(route.path).findOne())
+const { data: post } = await useAsyncData(routePath.value, () => queryCollection('posts').path(routePath.value).first())
 if (!post.value) {
   throw createError({ statusCode: 404, statusMessage: 'Post not found', fatal: true })
 }
 
-const { data: surround } = await useAsyncData(`${route.path}-surround`, () => queryContent('/blog')
-  .where({ _extension: 'md' })
-  .without(['body', 'excerpt'])
-  .sort({ date: -1 })
-  .findSurround(withoutTrailingSlash(route.path))
-, { default: () => [] })
+const { data: surround } = await useAsyncData(`${routePath.value}-surround`, () => {
+  return queryCollectionItemSurroundings('posts', routePath.value, {
+    fields: ['description']
+  })
+})
 
-const title = post.value.head?.title || post.value.title
-const description = post.value.head?.description || post.value.description
+const title = post.value.seo?.title || post.value.title
+const description = post.value.seo?.description || post.value.description
 
 useSeoMeta({
   title,
@@ -27,15 +27,9 @@ useSeoMeta({
 })
 
 if (post.value.image?.src) {
-  const site = useSiteConfig()
-
-  useSeoMeta({
-    ogImage: joinURL(site.url, post.value.image.src),
-    twitterImage: joinURL(site.url, post.value.image.src)
-  })
+  useSeoMeta({ ogImage: post.value.image.src })
 } else {
-  defineOgImage({
-    component: 'Saas',
+  defineOgImage('OgImageSaas', {
     title,
     description,
     headline: 'Blog'
@@ -50,12 +44,25 @@ if (post.value.image?.src) {
       :description="post.description"
     >
       <template #headline>
-        <UBadge
-          v-bind="post.badge"
-          variant="subtle"
-        />
-        <span class="text-gray-500 dark:text-gray-400">&middot;</span>
-        <time class="text-gray-500 dark:text-gray-400">{{ new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' }) }}</time>
+        <div class="flex flex-wrap items-center gap-2">
+          <UButton
+            to="/blog"
+            icon="i-heroicons-arrow-left-20-solid"
+            color="neutral"
+            variant="ghost"
+            size="xs"
+            class="-ml-1"
+          >
+            Volver al blog
+          </UButton>
+
+          <UBadge
+            v-bind="post.badge"
+            variant="subtle"
+          />
+          <span class="text-muted">&middot;</span>
+          <time class="text-muted">{{ new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' }) }}</time>
+        </div>
       </template>
 
       <div class="flex flex-wrap items-center gap-3 mt-4">
@@ -63,49 +70,41 @@ if (post.value.image?.src) {
           v-for="(author, index) in post.authors"
           :key="index"
           :to="author.to"
-          color="white"
+          color="neutral"
+          variant="subtle"
           target="_blank"
           size="sm"
         >
           <UAvatar
             v-bind="author.avatar"
-            :alt="author.name"
+            alt="Author avatar"
             size="2xs"
           />
 
           {{ author.name }}
         </UButton>
       </div>
-
-      <div class="absolute top-[68px] -left-[64px] hidden lg:flex">
-        <UTooltip text="Regrezar al listado">
-          <UButton
-            to="/blog/"
-            icon="i-heroicons-chevron-left"
-            color="gray"
-            :ui="{ rounded: 'rounded-full' }"
-            size="lg"
-            class=""
-          />
-        </UTooltip>
-      </div>
     </UPageHeader>
 
     <UPage>
-      <UPageBody prose>
+      <UPageBody>
         <ContentRenderer
-          v-if="post && post.body"
+          v-if="post"
           :value="post"
         />
 
-        <hr v-if="surround?.length">
+        <USeparator v-if="surround?.length" />
 
         <UContentSurround :surround="surround" />
       </UPageBody>
 
-      <template #right>
+      <template
+        v-if="post?.body?.toc?.links?.length"
+        #right
+      >
         <UContentToc
-          v-if="post.body && post.body.toc"
+          title="On this page"
+          highlight
           :links="post.body.toc.links"
         />
       </template>

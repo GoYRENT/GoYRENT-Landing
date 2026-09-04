@@ -1,67 +1,62 @@
 <script setup lang="ts">
-import type { BlogPost } from '~/types'
-
-const { data: page } = await useAsyncData('customer-stories', () => queryContent('/customer-stories').findOne())
+const { data: page } = await useAsyncData('customer-stories', () => queryCollection('content').path('/customer-stories').first())
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
 
-const { data: posts } = await useAsyncData('posts', () => queryContent<BlogPost>('/customer-stories')
-  .where({ _extension: 'md' })
-  .sort({ date: -1 })
-  .find())
+const { data: posts } = await useAsyncData('posts', () => queryCollection('content').where('path', 'LIKE', '/customer-stories/%').order('date', 'DESC').all())
+
+const postsList = computed(() => (posts.value || []).map((post: any) => ({
+  ...post,
+  image: post.meta?.image,
+  authors: post.meta?.authors,
+  badge: post.meta?.badge
+})))
+
+const title = page.value?.seo?.title || page.value?.title
+const description = page.value?.seo?.description || page.value?.description
 
 useSeoMeta({
-  title: page.value.title,
-  ogTitle: page.value.title,
-  description: page.value.description,
-  ogDescription: page.value.description
+  title,
+  ogTitle: title,
+  description,
+  ogDescription: description
 })
 
-defineOgImage({
-  component: 'Saas',
-  title: page.value.title,
-  description: page.value.description
+defineOgImage('OgImageSaas', {
+  title,
+  description
 })
 </script>
 
 <template>
   <UContainer>
     <UPageHeader
-      v-bind="page"
+      :title="page?.title"
+      :description="page?.description"
       class="py-[50px]"
     />
 
-    <UPage
-      id="smooth"
-      class="pt-20 -mt-20"
-    >
-      <!-- <template #left>
-        <UAside>
-          <UNavigationTree :links="[{ label: 'Categorías', disabled: true, children: services }, { label: 'Locations', disabled: true, children: regions }]" />
-        </UAside>
-      </template> -->
-
-      <UPageBody>
-        <UBlogList>
-          <UBlogPost
-            v-for="(post, index) in posts"
-            :key="index"
-            :to="post._path"
-            :title="post.title"
-            :description="post.description"
-            :image="post.image"
-            :date="new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' })"
-            :authors="post.authors"
-            :badge="post.badge"
-            :orientation="index === 0 ? 'horizontal' : 'vertical'"
-            :class="[index === 0 && 'col-span-full']"
-            :ui="{
-              description: 'line-clamp-2'
-            }"
-          />
-        </UBlogList>
-      </UPageBody>
-    </UPage>
+    <UPageBody>
+      <UBlogPosts>
+        <UBlogPost
+          v-for="(post, index) in postsList"
+          :key="index"
+          :to="post.path"
+          :title="post.title"
+          :description="post.description"
+          :image="post.image"
+          :date="new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' })"
+          :authors="post.authors"
+          :badge="post.badge"
+          :orientation="index === 0 ? 'horizontal' : 'vertical'"
+          :class="[index === 0 && 'col-span-full']"
+          variant="naked"
+          :ui="{
+            description: 'line-clamp-2'
+          }"
+        />
+      </UBlogPosts>
+    </UPageBody>
   </UContainer>
 </template>

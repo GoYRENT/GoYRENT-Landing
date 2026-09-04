@@ -34,7 +34,7 @@ const validate = (state: any) => {
 const providers = [{
   label: 'Continuar con Google',
   icon: 'i-simple-icons-google',
-  color: 'gray' as const,
+  color: 'neutral' as const,
   click: () => {
     console.log('Redirect to GitHub')
   }

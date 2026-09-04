@@ -3,16 +3,12 @@ import { withoutTrailingSlash } from 'ufo'
 
 const route = useRoute()
 
-const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne())
+const { data: page } = await useAsyncData(route.path, () => queryCollection('content').path(route.path).first())
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
 
-const { data: surround } = await useAsyncData(`${route.path}-surround`, () => queryContent('/privacy-policy')
-  .where({ _extension: 'md', navigation: { $ne: false } })
-  .only(['title', 'description', '_path'])
-  .findSurround(withoutTrailingSlash(route.path))
-, { default: () => [] })
+const { data: surround } = await useAsyncData(`${route.path}-surround`, () => queryCollectionItemSurroundings('content', withoutTrailingSlash(route.path), { fields: ['title', 'description', 'path'] }), { default: () => [] })
 
 const title = page.value.head?.title || page.value?.title
 const description = page.value?.head?.description || page.value?.description
@@ -25,13 +21,9 @@ useSeoMeta({
   ogTitle: `${title} · Enterprise`
 })
 
-defineOgImage({
-  component: 'Saas',
-  title: page.value.title,
-  description: page.value.description
-})
+defineOgImage('OgImageSaas', {}, { title: page.value.title, description: page.value.description })
 
-const headline = computed(() => findPageHeadline(page.value!))
+const headline = computed(() => page.value?.navigation?.title || page.value?.title || '')
 </script>
 
 <template>

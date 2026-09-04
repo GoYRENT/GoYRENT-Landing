@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const route = useRoute()
 
-const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne())
+const { data: page } = await useAsyncData(route.path, () => queryCollection('content').path(route.path).first())
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
@@ -17,45 +17,46 @@ useSeoMeta({
   ogTitle: `${title} · Enterprise`
 })
 
-defineOgImage({
-  component: 'Saas',
-  title: page.value.title,
-  description: page.value.description
-})
+defineOgImage('OgImageSaas', {}, { title: page.value.title, description: page.value.description })
+
+const pageData = computed(() => ({
+  ...(page.value as any) || {},
+  ...((page.value as any)?.meta || {})
+}))
 </script>
 
 <template>
   <UPage v-if="page">
     <UContainer>
-      <UPageHero v-bind="page.hero">
+      <UPageHero v-bind="pageData.hero">
         <template #description>
           <div class="text-md">
-            <span v-html="page.hero.description" />
+            <span v-html="pageData.hero?.description" />
           </div>
         </template>
       </UPageHero>
     </UContainer>
 
-    <ULandingSection
-      :title="page.features.title"
-      :description="page.features.description"
+    <UPageSection
+      :title="pageData.features?.title"
+      :description="pageData.features?.description"
     >
       <UPageGrid>
-        <ULandingCard
-          v-for="(item, index) in page.features.items"
+        <UPageCard
+          v-for="(item, index) in pageData.features?.items"
           :key="index"
           v-bind="item"
         />
       </UPageGrid>
-    </ULandingSection>
+    </UPageSection>
 
-    <ULandingSection
-      :title="page.team.title"
-      :description="page.team.description"
+    <UPageSection
+      :title="pageData.team?.title"
+      :description="pageData.team?.description"
     >
       <UPageGrid :ui="{ wrapper: 'grid grid-cols-1 sm:grid-cols-3 xl:grid-cols-4 gap-6' }">
         <div
-          v-for="(item, index) in page.team.members"
+          v-for="(item, index) in pageData.team?.members"
           :key="index"
           v-bind="item"
           class="text-center mx-auto"
@@ -76,11 +77,11 @@ defineOgImage({
         </div>
       </UPageGrid>
 
-      <ULandingCTA
-        v-bind="page.cta"
+      <UPageCTA
+        v-bind="pageData.cta"
         class="bg-gray-100/50 dark:bg-gray-800/50"
       />
-    </ULandingSection>
+    </UPageSection>
   </UPage>
 </template>
 

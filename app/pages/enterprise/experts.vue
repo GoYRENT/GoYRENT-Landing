@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const route = useRoute()
 
-const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne())
+const { data: page } = await useAsyncData(route.path, () => queryCollection('content').path(route.path).first())
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
@@ -17,45 +17,47 @@ useSeoMeta({
   ogTitle: `${title} · Enterprise`
 })
 
-defineOgImage({
-  component: 'Saas',
-  title: page.value.title,
-  description: page.value.description
-})
+defineOgImage('OgImageSaas', {}, { title: page.value.title, description: page.value.description })
+
+const pageData = computed(() => ({
+  ...(page.value as any) || {},
+  ...((page.value as any)?.meta || {})
+}))
 </script>
 
 <template>
   <UPage v-if="page">
     <UContainer>
-      <ULandingSection v-bind="page.hero">
+      <UPageSection v-bind="pageData.hero">
         <img
           src="/img/GoYRENT.jpeg"
           class="w-full rounded-md shadow-xl ring-1 ring-gray-300 dark:ring-gray-700"
         >
-      </ULandingSection>
+      </UPageSection>
 
-      <ULandingSection
-        v-for="(section, index) in page.sections"
+      <UPageSection
+        v-for="(section, index) in pageData.sections"
         :key="index"
         :title="section.title"
         :description="section.description"
         :features="section.features"
-        :align="section.align"
+        :orientation="section.align === 'left' || section.align === 'right' ? 'horizontal' : 'vertical'"
+        :reverse="section.align === 'right'"
         :ui="{ wrapper: 'py-4 sm:py-2', title: 'text-md sm:text-3xl' }"
       >
         <img
           src="/img/GoYRENT.jpeg"
           class="w-full rounded-xl shadow-xl ring-1 ring-gray-300 dark:ring-gray-700"
         >
-      </ULandingSection>
+      </UPageSection>
 
-      <ULandingSection
-        :title="page.services.title"
-        :description="page.services.description"
+      <UPageSection
+        :title="pageData.services?.title"
+        :description="pageData.services?.description"
       >
         <UPageGrid>
-          <ULandingCard
-            v-for="(item, index) in page.services.items"
+          <UPageCard
+            v-for="(item, index) in pageData.services?.items"
             :key="index"
             v-bind="item"
           >
@@ -68,37 +70,37 @@ defineOgImage({
                 class="w-full rounded-lg"
               >
             </template>
-          </ULandingCard>
+          </UPageCard>
         </UPageGrid>
-      </ULandingSection>
+      </UPageSection>
 
       <div id="experts">
-        <ULandingSection
-          :title="page.experts.title"
-          :description="page.experts.description"
+        <UPageSection
+          :title="pageData.experts?.title"
+          :description="pageData.experts?.description"
         >
           <UPageGrid>
             <EnterpriseExpertCard
-              v-for="(item, index) in page.experts.members"
+              v-for="(item, index) in pageData.experts?.members"
               :key="index"
               v-bind="item"
             />
           </UPageGrid>
-        </ULandingSection>
+        </UPageSection>
       </div>
 
-      <ULandingSection>
-        <ULandingCTA
-          v-bind="page.cta"
-          align="center"
+      <UPageSection>
+        <UPageCTA
+          v-bind="pageData.cta"
+          orientation="vertical"
           class=" dark:bg-gray-800/50 bg-[url('/img/GoYRENT.jpeg')]"
         >
         <!-- <img
           src="https://picsum.photos/640/360"
           class="w-full rounded-md shadow-xl ring-1 ring-gray-300 dark:ring-gray-700"
         /> -->
-        </ULandingCTA>
-      </ULandingSection>
+        </UPageCTA>
+      </UPageSection>
     </UContainer>
   </UPage>
 </template>

@@ -36,7 +36,7 @@ const validate = (state: any) => {
 const providers = [{
   label: 'Continuar con Google',
   icon: 'i-simple-icons-google',
-  color: 'white' as const,
+  color: 'neutral' as const,
   click: () => {
     console.log('Redirect to Google')
   }
@@ -78,7 +78,7 @@ async function submitForm(state: any) {
 
         for (let i = 0; i < errors.value.length; i++) {
           const msg = errors.value[i]
-          toast.add({ icon: 'i-heroicons-exclamation-triangle', color: 'red', title: 'Inicio se sesión fallido', description: msg })
+          toast.add({ icon: 'i-heroicons-exclamation-triangle', color: 'error', title: 'Inicio se sesión fallido', description: msg })
         }
 
         console.log(JSON.stringify(error.response))
@@ -87,7 +87,7 @@ async function submitForm(state: any) {
         errors.value.push('Something went wrong. Please try again')
 
         console.log(JSON.stringify(error))
-        toast.add({ icon: 'i-heroicons-exclamation-triangle', color: 'red', title: 'Inicio se sesión fallido', description: 'Ha ocurrido un error desconocido.' })
+        toast.add({ icon: 'i-heroicons-exclamation-triangle', color: 'error', title: 'Inicio se sesión fallido', description: 'Ha ocurrido un error desconocido.' })
         loading.value = false
       }
     })

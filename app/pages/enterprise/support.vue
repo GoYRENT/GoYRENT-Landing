@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const route = useRoute()
 
-const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne())
+const { data: page } = await useAsyncData(route.path, () => queryCollection('content').path(route.path).first())
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
@@ -17,27 +17,28 @@ useSeoMeta({
   ogTitle: `${title} · Enterprise`
 })
 
-defineOgImage({
-  component: 'Saas',
-  title: page.value.title,
-  description: page.value.description
-})
+defineOgImage('OgImageSaas', {}, { title: page.value.title, description: page.value.description })
+
+const pageData = computed(() => ({
+  ...(page.value as any) || {},
+  ...((page.value as any)?.meta || {})
+}))
 </script>
 
 <template>
   <UPage v-if="page">
     <UContainer>
-      <UPageHero v-bind="page.hero" />
+      <UPageHero v-bind="pageData.hero" />
       <UPageGrid>
-        <ULandingCard
-          v-for="(item, index) in page.hero.items"
+        <UPageCard
+          v-for="(item, index) in pageData.hero?.items"
           :key="index"
           v-bind="item"
         />
       </UPageGrid>
     </UContainer>
 
-    <ULandingSection
+    <UPageSection
       class="py-4 sm:py-8"
       :ui="{ container: 'gap-y-0 sm:gap-y-0' }"
     >
@@ -60,32 +61,42 @@ defineOgImage({
       <UPageColumns class="my-[72px]">
         <!-- Hack for Safari -->
         <div
-          v-for="(testimonial, index) in page.testimonials"
+          v-for="(testimonial, index) in pageData.testimonials"
           :key="index"
           class="break-inside-avoid"
         >
-          <ULandingTestimonial
-            v-bind="testimonial"
-            :ui="{ background: 'card-testimonial-bg' }"
-          />
+          <UPageCard
+            :description="testimonial.quote"
+            :ui="{ background: 'card-testimonial-bg', description: 'text-sm italic' }"
+          >
+            <template #footer>
+              <div class="flex items-center gap-3">
+                <UAvatar v-if="testimonial.author?.avatar" :src="testimonial.author.avatar.src" :alt="testimonial.author.name" size="md" />
+                <div>
+                  <p class="font-semibold text-sm">{{ testimonial.author?.name }}</p>
+                  <p class="text-xs text-muted">{{ testimonial.author?.description }}</p>
+                </div>
+              </div>
+            </template>
+          </UPageCard>
         </div>
       </UPageColumns>
-    </ULandingSection>
+    </UPageSection>
 
-    <ULandingSection
-      :title="page.faq.title"
-      :description="page.faq.description"
+    <UPageSection
+      :title="pageData.faq?.title"
+      :description="pageData.faq?.description"
     >
-      <ULandingFAQ
-        :items="page.faq.items"
-        multiple
+      <UAccordion
+        :items="pageData.faq?.items"
+        type="multiple"
         class="max-w-4xl mx-auto"
       />
-      <ULandingCTA
-        v-bind="page.cta"
+      <UPageCTA
+        v-bind="pageData.cta"
         class="bg-gray-100/50 dark:bg-gray-800/50"
       />
-    </ULandingSection>
+    </UPageSection>
   </UPage>
 </template>
 

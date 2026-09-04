@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { data: page } = await useAsyncData('pricing', () =>
-  queryContent('/pricing').findOne()
+  queryCollection('content').path('/pricing').first()
 )
 if (!page.value) {
   throw createError({
@@ -17,19 +17,32 @@ useSeoMeta({
   ogDescription: page.value.description
 })
 
-defineOgImage({
-  component: 'Saas',
-  title: page.value.title,
-  description: page.value.description
-})
+defineOgImage('OgImageSaas', {}, { title: page.value.title, description: page.value.description })
 
 const isYearly = ref(false)
 const have_discount = ref(false)
+
+const meta = computed(() => (page.value as any)?.meta || {})
+const pricingPlans = computed(() => {
+  const plans = (page.value as any)?.plans || meta.value.plans
+  if (!Array.isArray(plans)) return []
+  return plans.map((plan: any) => ({
+    ...plan,
+    badge: plan.badge ? { label: plan.badge } : undefined,
+    price: isYearly.value ? plan.price?.year : plan.price?.month,
+    discount: isYearly.value ? plan.price?.discount : undefined,
+    billingCycle: isYearly.value ? '/anual' : '/mes'
+  }))
+})
+const pricingHero = computed(() => (page.value as any)?.hero || meta.value.hero)
+const pricingLogos = computed(() => (page.value as any)?.logos || meta.value.logos)
+const pricingFaq = computed(() => (page.value as any)?.faq || meta.value.faq)
+const pricingCta = computed(() => (page.value as any)?.cta || meta.value.cta)
 </script>
 
 <template>
   <div v-if="page">
-    <UPageHero v-bind="page.hero">
+    <UPageHero v-bind="pricingHero">
       <template #links>
         <div class="flex-1 flex flex-col justify-center items-center flex flex-col items-center justify-center flex-1">
           <div class="mb-3 text-center">
@@ -46,32 +59,25 @@ const have_discount = ref(false)
             </UBadge>
           </div>
 
-          <div class="flex items-center gap-2">
-            <UPricingToggle
-              v-model="isYearly"
-              class="w-48"
-              left="Mensual"
-              right="Anual (-20%)"
-            />
+          <div class="flex items-center gap-3">
+            <span :class="{ 'font-semibold text-primary': !isYearly }">Mensual</span>
+            <USwitch v-model="isYearly" />
+            <span :class="{ 'font-semibold text-primary': isYearly }">Anual (-20%)</span>
           </div>
         </div>
       </template>
     </UPageHero>
 
     <UContainer>
-      <UPricingGrid compact>
-        <UPricingCard
-          v-for="(plan, index) in page.plans"
+      <UPageGrid>
+        <UPricingPlan
+          v-for="(plan, index) in pricingPlans"
           :key="index"
           v-bind="plan"
-          :badge=" plan.badge ? { label: plan.badge }:''"
-          :discount="isYearly ? plan.price.discount : '' "
-          :price="isYearly ? plan.price.year : plan.price.month"
-          :cycle="isYearly ? '/anual' : '/mes'"
         />
-      </UPricingGrid>
+      </UPageGrid>
 
-      <ULandingSection
+      <UPageSection
         title="Características principales de cada plan"
       >
 <!--        <Pricing-->
@@ -79,45 +85,45 @@ const have_discount = ref(false)
 <!--          :key="index"-->
 <!--          v-bind="feature"-->
 <!--        />-->
-      </ULandingSection>
+      </UPageSection>
     </UContainer>
 
-    <ULandingSection
-      :title="page.logos.title"
-      :description="page.logos.description"
+    <UPageSection
+      :title="pricingLogos?.title"
+      :description="pricingLogos?.description"
     >
-      <ULandingLogos>
+      <UPageLogos>
         <UIcon
-          v-for="icon in page.logos.icons"
+          v-for="icon in pricingLogos?.icons"
           :key="icon"
           :name="icon"
           class="w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400"
         />
-      </ULandingLogos>
-    </ULandingSection>
+      </UPageLogos>
+    </UPageSection>
 
     <UContainer>
-      <UDashboardCard
+      <UPageCard
         title="¿Necesitas algún plan personalizado?"
         description="GOYRENT puede ofrecerte un plan personalizado en base a tus propias necesidades. Contacta con nosotros para diseñar su propia oferta."
-        :links="[{ label: 'Contacta con nosotros', color: 'gray', to: 'mailto:team@goyrent.com' }]"
+        :links="[{ label: 'Contacta con nosotros', color: 'neutral', to: 'mailto:team@goyrent.com' }]"
       />
     </UContainer>
 
-    <ULandingSection
-      :title="page.faq.title"
-      :description="page.faq.description"
+    <UPageSection
+      :title="pricingFaq?.title"
+      :description="pricingFaq?.description"
     >
-      <ULandingFAQ
-        :items="page.faq.items"
-        multiple
+      <UAccordion
+        :items="pricingFaq?.items"
+        type="multiple"
         class="max-w-4xl mx-auto"
       />
-      <ULandingCTA
-        v-bind="page.cta"
+      <UPageCTA
+        v-bind="pricingCta"
         class="bg-gray-100/50 dark:bg-gray-800/50"
       />
-    </ULandingSection>
+    </UPageSection>
   </div>
 </template>
 

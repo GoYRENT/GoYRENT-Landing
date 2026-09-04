@@ -5,7 +5,12 @@ const route = useRoute()
 const { replaceRoute } = useFilters('websites')
 const { fetchList, filteredWebsite, q, categories, selectedOrder, sorts, selectedSort } = useUseCustomerWebsites()
 
-const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne())
+const { data: page } = await useAsyncData(route.path, () => queryCollection('content').path(route.path).first())
+
+const pageData = computed(() => ({
+  ...(page.value as any) || {},
+  ...((page.value as any)?.meta || {})
+}))
 
 const links = [{
   icon: 'i-ph-book-open-duotone',
@@ -18,8 +23,8 @@ const links = [{
   target: '_blank'
 }]
 
-const title = page.value.head?.title || page.value.title
-const description = page.value.head?.description || page.value.description
+const title = (page.value as any)?.head?.title || pageData.value.title || (page.value as any)?.title
+const description = (page.value as any)?.head?.description || pageData.value.description || (page.value as any)?.description
 useSeoMeta({
   titleTemplate: '%s',
   title,
@@ -41,7 +46,7 @@ const { copy } = useCopyToClipboard()
 
 <template>
   <UContainer>
-    <UPageHero v-bind="page">
+    <UPageHero v-bind="pageData">
       <div class="lg:pl-10">
         <UPageGrid :ui="{ wrapper: 'grid-cols-2 sm:grid-cols-2 xl:grid-cols-2 gap-4' }">
           <UPageCard
@@ -106,18 +111,18 @@ const { copy } = useCopyToClipboard()
       class="pt-20 -mt-20"
     >
       <template #left>
-        <UAside>
-          <UNavigationTree :links="[{ label: 'Categories', disabled: true, children: categories }]" />
+        <UPageAside>
+          <UContentNavigation :navigation="[{ label: 'Categories', disabled: true, children: categories }]" />
 
           <template #bottom>
-            <UDivider
+            <USeparator
               type="dashed"
               class="my-6"
             />
 
             <UPageLinks :links="links" />
           </template>
-        </UAside>
+        </UPageAside>
       </template>
 
       <UPageBody>
@@ -131,17 +136,15 @@ const { copy } = useCopyToClipboard()
             class="w-56"
             size="md"
             autocomplete="off"
-            :ui="{ icon: { trailing: { pointer: '' } } }"
             @update:model-value="replaceRoute('q', $event)"
           >
             <template #trailing>
               <UButton
                 v-if="q"
-                color="gray"
+                color="neutral"
                 variant="link"
                 size="xs"
                 icon="i-ph-x"
-                :padded="false"
                 @click="replaceRoute('q', '')"
               />
               <UKbd v-else>
@@ -150,27 +153,27 @@ const { copy } = useCopyToClipboard()
             </template>
           </UInput>
 
-          <UButtonGroup>
+          <div class="flex">
             <UButton
               :icon="selectedOrder.icon"
               size="md"
-              color="gray"
+              color="neutral"
               @click="replaceRoute('orderBy', selectedOrder.key === 'desc' ? 'asc' : 'desc')"
             />
             <USelectMenu
               :model-value="selectedSort"
-              :options="sorts"
+              :items="sorts"
               size="md"
-              color="white"
+              color="neutral"
               class="w-32"
               @update:model-value="replaceRoute('sortBy', $event)"
             />
-          </UButtonGroup>
+          </div>
         </div>
 
-        <UPageGrid v-if="filteredModules?.length">
+        <UPageGrid v-if="filteredWebsite?.length">
           <UPageCard
-            v-for="(module, index) in filteredModules"
+            v-for="(module, index) in filteredWebsite"
             :key="index"
             :to="`/modules/${module.name}`"
             :title="module.name"
@@ -183,7 +186,7 @@ const { copy } = useCopyToClipboard()
                 :icon="moduleIcon(module.category)"
                 :alt="module.name"
                 size="lg"
-                :ui="{ rounded: 'rounded-lg' }"
+                :ui="{ root: 'rounded-lg' }"
                 class="pointer-events-none"
               />
             </template>
@@ -212,7 +215,7 @@ const { copy } = useCopyToClipboard()
                   class="space-x-1 shine text-sm items-center justitfy-center pointer-events-none"
                   size="xs"
                   variant="subtle"
-                  color="pink"
+                  color="error"
                   :ui="{ base: '!flex' }"
                 >
                   <UIcon
@@ -236,7 +239,7 @@ const { copy } = useCopyToClipboard()
             >
               <UButton
                 icon="i-ph-package-duotone"
-                color="white"
+                color="neutral"
                 @click="copy(`npx nuxi@latest module add ${module.name}`, { title: 'Command copied to clipboard:', description: `npx nuxi@latest module add ${module.name}` })"
               />
             </UTooltip>
@@ -293,25 +296,29 @@ const { copy } = useCopyToClipboard()
           </UPageCard>
         </UPageGrid>
 
-        <EmptyCard
+        <UEmpty
           v-else
-          :label="`There is no module found for <b>${q}</b> yet. Become the first one to create it!`"
+          icon="i-lucide-search"
+          title="No modules found"
+          :description="q ? `There is no module found for ${q} yet. Become the first one to create it!` : 'No modules found. Try a different search.'"
         >
-          <UButton
-            label="Contribute on GitHub"
-            color="black"
-            to="https://github.com/nuxt/modules"
-            target="_blank"
-            size="md"
-            @click="$router.replace({ query: {} })"
-          />
-          <UButton
-            to="/docs/guide/going-further/modules"
-            color="white"
-            size="md"
-            label="How to create a module?"
-          />
-        </EmptyCard>
+          <template #actions>
+            <UButton
+              label="Contribute on GitHub"
+              color="neutral"
+              to="https://github.com/nuxt/modules"
+              target="_blank"
+              size="md"
+              @click="$router.replace({ query: {} })"
+            />
+            <UButton
+              to="/docs/guide/going-further/modules"
+              color="neutral"
+              size="md"
+              label="How to create a module?"
+            />
+          </template>
+        </UEmpty>
       </UPageBody>
     </UPage>
   </UContainer>

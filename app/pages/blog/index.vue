@@ -1,27 +1,26 @@
 <script setup lang="ts">
 import type { BlogPost } from '~/types'
 
-const { data: page } = await useAsyncData('blog', () => queryContent('/blog').findOne())
+const { data: page } = await useAsyncData('blog', () => queryCollection('blog').first())
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
 
-const { data: posts } = await useAsyncData('posts', () => queryContent<BlogPost>('/blog')
-  .where({ _extension: 'md' })
-  .sort({ date: -1 })
-  .find())
+const { data: posts } = await useAsyncData('posts', () => queryCollection('posts').order('date', 'DESC').all())
+
+const title = page.value?.seo?.title || page.value?.title
+const description = page.value?.seo?.description || page.value?.description
 
 useSeoMeta({
-  title: page.value.title,
-  ogTitle: page.value.title,
-  description: page.value.description,
-  ogDescription: page.value.description
+  title,
+  ogTitle: title,
+  description,
+  ogDescription: description
 })
 
-defineOgImage({
-  component: 'Saas',
-  title: page.value.title,
-  description: page.value.description
+defineOgImage('OgImageSaas', {
+  title,
+  description
 })
 </script>
 
@@ -33,11 +32,11 @@ defineOgImage({
     />
 
     <UPageBody>
-      <UBlogList>
+      <UBlogPosts>
         <UBlogPost
           v-for="(post, index) in posts"
           :key="index"
-          :to="post._path"
+          :to="post.path"
           :title="post.title"
           :description="post.description"
           :image="post.image"
@@ -46,11 +45,12 @@ defineOgImage({
           :badge="post.badge"
           :orientation="index === 0 ? 'horizontal' : 'vertical'"
           :class="[index === 0 && 'col-span-full']"
+          variant="naked"
           :ui="{
             description: 'line-clamp-2'
           }"
         />
-      </UBlogList>
+      </UBlogPosts>
     </UPageBody>
   </UContainer>
 </template>

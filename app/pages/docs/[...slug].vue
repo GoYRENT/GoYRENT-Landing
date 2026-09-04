@@ -2,32 +2,30 @@
 import { withoutTrailingSlash } from 'ufo'
 
 const route = useRoute()
+const routePath = computed(() => withoutTrailingSlash(route.path))
 
-const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne())
+const { data: page } = await useAsyncData(routePath.value, () => queryCollection('docs').path(routePath.value).first())
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
 
-const { data: surround } = await useAsyncData(`${route.path}-surround`, () => queryContent('/docs')
-  .where({ _extension: 'md', navigation: { $ne: false } })
-  .only(['title', 'description', '_path'])
-  .findSurround(withoutTrailingSlash(route.path))
-, { default: () => [] })
+const { data: surround } = await useAsyncData(`${routePath.value}-surround`, () => {
+  return queryCollectionItemSurroundings('docs', routePath.value, {
+    fields: ['description']
+  })
+}, { default: () => [] })
+
+const title = (page.value as any).seo?.title || page.value.title
+const description = (page.value as any).seo?.description || page.value.description
 
 useSeoMeta({
-  title: page.value.title,
-  ogTitle: page.value.title,
-  description: page.value.description,
-  ogDescription: page.value.description
+  title,
+  ogTitle: title,
+  description,
+  ogDescription: description
 })
 
-defineOgImage({
-  component: 'Saas',
-  title: page.value.title,
-  description: page.value.description
-})
-
-const headline = computed(() => findPageHeadline(page.value!))
+defineOgImage('OgImageSaas', { title, description, headline: 'Docs' })
 </script>
 
 <template>
@@ -35,26 +33,28 @@ const headline = computed(() => findPageHeadline(page.value!))
     <UPageHeader
       :title="page.title"
       :description="page.description"
-      :links="page.links"
-      :headline="headline"
     />
 
-    <UPageBody prose>
+    <UPageBody>
       <ContentRenderer
         v-if="page.body"
         :value="page"
       />
 
-      <hr v-if="surround?.length">
+      <USeparator v-if="surround?.length" />
 
       <UContentSurround :surround="surround" />
     </UPageBody>
 
     <template
-      v-if="page.toc !== false"
+      v-if="page?.body?.toc?.links?.length"
       #right
     >
-      <UContentToc :links="page.body?.toc?.links" />
+      <UContentToc
+        title="On this page"
+        highlight
+        :links="page.body.toc.links"
+      />
     </template>
   </UPage>
 </template>
